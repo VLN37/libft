@@ -19,7 +19,7 @@ static int	validation(char *str, int *ptrsign, int *ptri)
 	{
 		i++;
 	}
-	while (str[i] == '+' || str[i] == '-')
+	if (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')
 			*ptrsign *= -1;
