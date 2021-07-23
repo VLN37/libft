@@ -1,13 +1,12 @@
-#include "../../libft.h"
+#include "libft.h"
 #include <stdio.h>
 
-static int	ft_createstr(char **str, size_t size)
+static char	*ft_createstr(char *str, size_t size)
 {
-	*str = malloc(sizeof(char) * size);
-	if (!str)
-		return (0);
+	if (!(str = malloc(sizeof(char) * size)))
+		return (NULL);
 	else
-		return (1);
+		return (str);
 }
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
@@ -16,16 +15,16 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char			*adrs;
 
 	adrs = NULL;
-	if (ft_strlen((char *)s) + 1 < (int)start)
+	if (ft_strlen((char *)s) < (int)start)
 		return (NULL);
 	if (ft_strlen((char *)s) + 1 > (int)len)
 	{
-		if (!ft_createstr(&adrs, len))
+		if (!(adrs = ft_createstr(adrs, len)))
 			return (NULL);
 	}
 	else
 	{
-		if (!ft_createstr(&adrs, ft_strlen((char *)s) + 1))
+		if (!(adrs = ft_createstr(adrs, ft_strlen((char *)s) + 1)))
 			return (NULL);
 	}
 	i = 0;
