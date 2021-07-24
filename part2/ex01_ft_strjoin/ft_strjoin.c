@@ -1,20 +1,24 @@
-#include "../libft.h"
+#include "libft.h"
+#include <stdio.h>
 
 //allocates a new string and returns the concatenation of the two arguments
-char *	ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char *res;
+	int		size;
 
-	res = malloc(sizeof(char) * (ft_strlen((char *)s1) + ft_strlen((char *)s2) + 1));
+	size = (ft_strlen((char *)s1) + ft_strlen((char *)s2));
+	res = malloc(sizeof(char) * (size + 1));
 	while(*s1)
 		*res++ = *s1++;
 	while (*s2)
 		*res++ = *s2++;
 	*res = 0;
-	return (res);
+
+	return (res - size);
 }
 
-#include <stdio.h>
+
 int	main(void)
 {
 	char str1[] = "hello";

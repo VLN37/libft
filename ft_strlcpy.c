@@ -13,9 +13,9 @@
 #include "libft.h"
 #include<stdio.h>
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+size_t	ft_strlcpy(char *dest, char *src, size_t size)
 {
-	unsigned int	i;
+	size_t	i;
 
 	if (size < 1)
 		return (ft_strlen(src));
