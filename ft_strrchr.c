@@ -1,7 +1,7 @@
 #include "libft.h"
 
 //returns the address of the last occurrence of c in str
-char	*ft_strrchr(char *str, int c)
+char	*ft_strrchr(const char *str, int c)
 {
 	char	*addrs;
 
@@ -9,10 +9,10 @@ char	*ft_strrchr(char *str, int c)
 	while (*str)
 	{
 		if (*str == c)
-			addrs = &*str;
+			addrs = &*(char *)str;
 		str++;
 	}
 	if (*str == c)
-		addrs = &*str;
+		addrs = &*(char *)str;
 	return (addrs);
 }

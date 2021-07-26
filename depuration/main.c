@@ -1,26 +1,37 @@
-#include "../libft.h"
 
-//allocates a new string and returns the concatenation of the two arguments
-char *	ft_strjoin(char const *s1, char const *s2)
+
+char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 {
-	char *res;
+	size_t	i;
+	size_t	j;
 
-	res = malloc(sizeof(char) * (ft_strlen((char *)s1) + ft_strlen((char *)s2) + 1));
-	while(*s1)
-		*res++ = *s1++;
-	while (*s2)
-		*res++ = *s2++;
-	*res = 0;
-	return (res);
+	i = 0;
+	j = 0;
+	if (!to_find[0])
+		return ((char *)str);
+	while (str[i] && i < n)
+	{
+		while (str[i] == to_find[j] && i < n)
+		{
+			j++;
+			i++;
+			if (!to_find[j])
+				return ((char *)&str[i - j]);
+			if (str[i] != to_find[j])
+				j = 0;
+		}
+		i++;
+	}
+	return (NULL);
 }
 
 #include <stdio.h>
+
 int	main(void)
 {
-	char str1[] = "hello";
-	char str2[] = "world";
-	char *str3;
-	str3 = ft_strjoin(str1, str2);
-	printf("%s\n", str3);
-	free(str3);
+	char haystack[30] = "aaabcabcd";
+	char needle[10] = "aabc";
+	char * empty = (char*)"";
+
+	printf("%s\n", ft_strnstr(haystack, needle, -1));
 }

@@ -3,7 +3,7 @@
 
 static int	ft_createstr(char **str, size_t size)
 {
-	*str = malloc(sizeof(char) * (size + 1));
+	*str = (char *)malloc(sizeof(char) * (size + 1));
 	if (!*str)
 		return (0);
 	else
@@ -18,14 +18,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char			*adrs;
 
 	adrs = NULL;
-	if (ft_strlen((char *)s) + 1 > len)
+	if (ft_strlen((char *)(s + start)) + 1 > len)
 	{
 		if (!(ft_createstr(&adrs, len)))
 			return (NULL);
 	}
 	else
 	{
-		if (!(ft_createstr(&adrs, ft_strlen((char *)s))))
+		if (!(ft_createstr(&adrs, ft_strlen((char *)(s + start)))))
 			return (NULL);
 	}
 	i = 0;
