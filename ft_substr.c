@@ -18,7 +18,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char			*adrs;
 
 	adrs = NULL;
-	if (ft_strlen((char *)s) + 1 > (int)len)
+	if (ft_strlen((char *)s) + 1 > len)
 	{
 		if (!(ft_createstr(&adrs, len)))
 			return (NULL);

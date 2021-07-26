@@ -10,8 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 //returns the size of a string
-int	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	int	counter;
 

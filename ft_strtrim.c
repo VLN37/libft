@@ -1,6 +1,6 @@
 #include "libft.h"
 
-int	istrimmed(char c, char const *set)
+static int	istrimmed(char c, char const *set)
 {
 	while(*set)
 	{
@@ -11,7 +11,7 @@ int	istrimmed(char c, char const *set)
 	return (0);
 }
 
-void setvariables(int *size, int *start, char const *s1, char const *set)
+static void setvariables(int *size, int *start, char const *s1, char const *set)
 {
 	int	i;
 

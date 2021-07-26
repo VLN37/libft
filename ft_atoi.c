@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	validation(char *str, int *ptrsign, int *ptri)
+static int	validation(const char *str, int *ptrsign, int *ptri)
 {
 	int	i;
 
@@ -31,7 +31,7 @@ static int	validation(char *str, int *ptrsign, int *ptri)
 	return (1);
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	i;
 	int	sign;
