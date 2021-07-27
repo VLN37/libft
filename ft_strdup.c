@@ -1,13 +1,6 @@
+#include "libft.h"
 #include<stdlib.h>
-int	ft_strlen(char *str)
-{
-	int	i;
 
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
 
 //dupes the string with memory from the heap and returns its new address
 char	*ft_strdup(const char *src)

@@ -8,11 +8,11 @@ char	*ft_strrchr(const char *str, int c)
 	addrs = NULL;
 	while (*str)
 	{
-		if (*str == c)
-			addrs = &*(char *)str;
+		if (*str == (char)c)
+			addrs = (char *)str;
 		str++;
 	}
-	if (*str == c)
-		addrs = &*(char *)str;
+	if (*str == (char)c)
+		addrs = (char *)str;
 	return (addrs);
 }

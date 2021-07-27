@@ -32,6 +32,8 @@ INDEX	= ranlib ${NAME}
 all:		${OBJECTS}
 			${AR} ${ARFLAGS} ${NAME} ${OBJECTS}
 
+so:			${OBJECTS}
+			${AR} ${ARFLAGS} -o libft.so ${OBJECTS}
 clean:
 			${RM} ${OBJECTS}
 
