@@ -6,9 +6,11 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 03:05:05 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/06/17 16:33:45 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/07/27 10:16:54 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 static int	validation(const char *str, int *ptrsign, int *ptri)
 {
@@ -31,20 +33,17 @@ static int	validation(const char *str, int *ptrsign, int *ptri)
 	return (1);
 }
 
+//receives a string and returns it as an int, if valid
 int	ft_atoi(const char *str)
 {
 	int	i;
 	int	sign;
 	int	result;
-	int	*ptri;
-	int	*ptrsign;
 
 	i = 0;
 	sign = 1;
 	result = 0;
-	ptri = &i;
-	ptrsign = &sign;
-	if (!validation(str, ptrsign, ptri))
+	if (!validation(str, &sign, &i))
 		return (0);
 	while (str[i] != '\0')
 	{

@@ -6,14 +6,13 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 11:26:42 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/06/16 19:07:16 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/07/27 10:19:08 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include<stdio.h>
 
-//cpy size bytes from src into dest
+//copy SIZE bytes from SRC into DEST
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	i;

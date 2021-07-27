@@ -1,7 +1,18 @@
-#include "libft.h"
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/27 10:06:02 by jofelipe          #+#    #+#             */
+/*   Updated: 2021/07/27 10:14:03 by jofelipe         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-	//what do i return on overflow handling? line 15
+#include "libft.h"
+
+//receives a string and fills all positions with NULL
 void	*ft_calloc(size_t nbr, size_t size)
 {
 	size_t			maxnbr;

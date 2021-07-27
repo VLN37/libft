@@ -1,8 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/27 10:17:13 by jofelipe          #+#    #+#             */
+/*   Updated: 2021/07/27 10:17:38 by jofelipe         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-#include<stdlib.h>
 
-
-//dupes the string with memory from the heap and returns its new address
+//allocates a new memory chunk, dupe SRC and returns its new address
 char	*ft_strdup(const char *src)
 {
 	int		i;

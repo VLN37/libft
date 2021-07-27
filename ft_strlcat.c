@@ -6,12 +6,13 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 04:45:30 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/06/16 09:17:39 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/07/27 10:19:21 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+//concatenates at most SIZE characters from SRC into DEST
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	size_t	i;

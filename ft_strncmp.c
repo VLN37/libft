@@ -6,13 +6,14 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 04:45:18 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/06/16 10:04:07 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/07/27 10:20:51 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//compares the first
+//returns the difference of the first character that differ between
+//s1 and s2
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	unsigned int	i;

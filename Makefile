@@ -34,6 +34,7 @@ all:		${OBJECTS}
 
 so:			${OBJECTS}
 			${AR} ${ARFLAGS} -o libft.so ${OBJECTS}
+
 clean:
 			${RM} ${OBJECTS}
 
