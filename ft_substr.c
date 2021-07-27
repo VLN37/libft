@@ -22,11 +22,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	adrs = NULL;
 	if (start >= ft_strlen(s))
-		{
-			adrs = (char *)malloc(sizeof(char));
-			*adrs = 0;
-			return (adrs);
-		}
+	{
+		adrs = (char *)malloc(sizeof(char));
+		*adrs = 0;
+		return (adrs);
+	}
 	if (!(ft_createstr(&adrs, ft_strlen(s), s)))
 		return (NULL);
 	i = 0;
