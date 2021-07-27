@@ -4,7 +4,7 @@
 static int	ft_createstr(char **str, size_t size, char const *s)
 {
 	if (ft_strlen(s) < size)
-		*str = (char *)ft_calloc(ft_strlen(s) + 5, sizeof(char));
+		*str = (char *)ft_calloc(ft_strlen(s) + 1, sizeof(char));
 	else
 		*str = (char *)ft_calloc(size + 1, sizeof(char));
 	if (!*str)
@@ -22,11 +22,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	adrs = NULL;
 	if (start >= ft_strlen(s))
-	{
-		adrs = (char *)malloc(sizeof(char));
-		*adrs = 0;
-		return (adrs);
-	}
+		return(ft_strdup(""));
 	if (!(ft_createstr(&adrs, ft_strlen(s), s)))
 		return (NULL);
 	i = 0;

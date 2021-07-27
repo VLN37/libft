@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 10:15:30 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/07/27 10:15:30 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/07/27 15:50:40 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,10 @@ char	**ft_split(char const *s, char c)
 	char	**res;
 
 	i = 0;
-	strctr = strcount(s, c);
-	res = (char **)malloc(sizeof(char *) * (strctr + 1));
 	if (!s)
 		return (NULL);
+	strctr = strcount(s, c);
+	res = (char **)malloc(sizeof(char *) * (strctr + 1));
 	if (!res)
 		return (NULL);
 	while (*s)
