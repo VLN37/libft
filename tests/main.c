@@ -256,17 +256,17 @@ int	main(void)
 		printf("[OK] ft_strncmp\n");
 
 	//atoi
-	if (ft_atoi("      -++-+-----2147483648") != -2147483648)
+	if (ft_atoi("      -2147483648") != -2147483648)
 		printf("[KO] atoi fails MIN_INT\n");
-	else if (ft_atoi("      -++-+----2147483647") != 2147483647)
+	else if (ft_atoi("      +2147483647") != 2147483647)
 		printf("[KO] atoi fails MAX_INT\n");
 	else if (ft_atoi("    a  -++-+----2147483648") != 0)
 		printf("[KO] atoi fails test 3\n");
 	else if (ft_atoi("      -++-+s----1337") != 0)
 		printf("[KO] atoi fails test 4\n");
-	else if (ft_atoi("   -----1337s1337") != -1337)
+	else if (ft_atoi("   -1337s1337") != -1337)
 		printf("[KO] atoi fails test 5\n");
-	else if (ft_atoi("--+-70703") != -70703)
+	else if (ft_atoi("-70703") != -70703)
 		printf("[KO] atoi fails test 6\n");
 	else if (ft_atoi("1231a1") != 1231)
 		printf("[KO] atoi fails test 7\n");
@@ -366,4 +366,18 @@ int	main(void)
 		printf("[OK] ft_tolower\n");
 
 	return (0);
+
+	//itoa
+	if(ft_itoa(0) != "0")
+		printf("[KO] itoa fails on 0\n");
+	else if (ft_itoa(10) != "10")
+		printf("[KO] itoa fails on test 1\n");
+	else if (ft_itoa(-10) != "-10")
+		printf("[KO] itoa fails on negative\n");
+	else if (ft_itoa(2147483647) != "2147483647")
+		printf("[KO] itoa fails on INT_MAX\n");
+	else if (ft_itoa(2147483647) != "-2147483648")
+		printf("[KO] itoa fails on INT_MIN\n");
+	else
+		printf("[OK] ft_itoa");
 }
