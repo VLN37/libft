@@ -14,7 +14,7 @@ int	main(int argc, char** argv)
 	fd = open(argv[1], O_WRONLY);
 	if (fd == -1)
 		return (1);
-	ft_putnbr_fd(12345, fd);
+	ft_putnbr_fd(-42, fd);
 	close(fd);
 	return (0);
 }
