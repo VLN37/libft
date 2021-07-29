@@ -1,6 +1,7 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <unistd.h>
 # include <stdlib.h>
 
 void			*ft_memset(void *str, int c, size_t len);
@@ -39,5 +40,9 @@ char			**ft_split(char const *s, char c);
 char			*ft_itoa(int nbr);
 void			ft_striteri(char *s, void (*f)(unsigned int, char *));
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void			ft_putchar_fd(char c, int fd);
+void			ft_putstr_fd(char *s, int fd);
+void			ft_putendl_fd(char *s, int fd);
+void			ft_putnbr_fd(int n, int fd);
 
 #endif

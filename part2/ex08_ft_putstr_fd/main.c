@@ -14,7 +14,7 @@ int	main(int argc, char** argv)
 	fd = open(argv[1], O_WRONLY);
 	if (fd == -1)
 		return (1);
-	ft_putchar_fd('!', fd);
+	ft_putstr_fd("Don't Panic!", fd);
 	close(fd);
 	return (0);
 }
