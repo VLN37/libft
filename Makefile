@@ -32,6 +32,9 @@ INDEX	= ranlib ${NAME}
 all:		${OBJECTS}
 			${AR} ${ARFLAGS} ${NAME} ${OBJECTS}
 
+compile:
+			gcc -Wall -Wextra -Werror ft_itoa.c
+
 so:			${OBJECTS}
 			${AR} ${ARFLAGS} -o libft.so ${OBJECTS}
 

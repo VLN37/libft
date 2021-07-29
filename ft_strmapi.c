@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/27 10:13:24 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/07/28 18:09:12 by jofelipe         ###   ########.fr       */
+/*   Created: 2021/07/28 16:21:11 by jofelipe          #+#    #+#             */
+/*   Updated: 2021/07/29 10:02:48 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//overwrites the first N bytes of STR with C
-void	*ft_memset(void *str, int c, size_t len)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int	size;
+	int		i;
+	char	*res;
 
-	size = len;
-	while (len-- > 0)
-		*(char *)str++ = (unsigned char)c;
-	return (str - size);
+	i = -1;
+	res = ft_strdup((char *)s);
+	if (!res)
+		return (NULL);
+	while (s[++i])
+		res[i] = f(i, s[i]);
+	return (res);
 }

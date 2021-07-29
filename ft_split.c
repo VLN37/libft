@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 10:15:30 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/07/27 20:28:33 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/07/28 14:34:30 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,11 @@ char	**ft_split(char const *s, char c)
 				free(res[i--]);
 			return (NULL);
 		}
-		ft_strlcpy(res[i], s, strsize((char *)s, c) + 1);
-		i++;
+		if (*s)
+		{
+			ft_strlcpy(res[i], s, strsize((char *)s, c) + 1);
+			i++;
+		}
 		while (*s && *s != c)
 			s++;
 		while (*s == c)
