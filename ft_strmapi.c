@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 16:21:11 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/07/29 10:02:48 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/07/30 16:35:19 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*res;
 
 	i = -1;
+	if (!s)
+		return (NULL);
 	res = ft_strdup((char *)s);
 	if (!res)
 		return (NULL);

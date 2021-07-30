@@ -6,27 +6,33 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 10:15:30 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/07/28 14:34:30 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/07/30 17:20:51 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	strcount(char const *s, char c)
+static int	strcount(char const *s, char c, int *l)
 {
 	int	i;
 
-	i = 1;
+	*l = 0;
+	i = 0;
+	if (c == 0)
+		return (1);
+	if (!*s)
+		return (0);
 	while (*s)
 	{
-		if (*s == c && *(s + 1) && *(s + 1) != c)
+		while (*s == c)
+			s++;
+		if (*s && *s != c)
+		{
+			while (*s && *s != c)
+				s++;
 			i++;
-		if (*s == c && !*(s + 1) && i == 1)
-			return (0);
-		s++;
+		}
 	}
-	if (i > 0)
-		i++;
 	return (i);
 }
 
@@ -35,7 +41,7 @@ static int	strsize(char *s, char c)
 	int	i;
 
 	i = 0;
-	while (*s != c && *s)
+	while (*s && *s != c)
 	{
 		s++;
 		i++;
@@ -49,11 +55,10 @@ char	**ft_split(char const *s, char c)
 	int		i;
 	char	**res;
 
-	i = 0;
 	if (!s)
 		return (NULL);
-	strctr = strcount(s, c);
-	res = (char **)malloc(sizeof(char *) * strctr + 1);
+	strctr = strcount(s, c, &i) + 1;
+	res = (char **)malloc(sizeof(char *) * strctr);
 	if (!res)
 		return (NULL);
 	while (*s)
@@ -62,20 +67,11 @@ char	**ft_split(char const *s, char c)
 			s++;
 		if (*s)
 			res[i] = ft_calloc(strsize((char *)s, c) + 1, sizeof(char));
-		if (!res[i])
-		{
-			while (i >= 0)
-				free(res[i--]);
-			return (NULL);
-		}
 		if (*s)
-		{
-			ft_strlcpy(res[i], s, strsize((char *)s, c) + 1);
-			i++;
-		}
+			ft_strlcpy(res[i++], s, strsize((char *)s, c) + 1);
 		while (*s && *s != c)
 			s++;
-		while (*s == c)
+		while (*s == c && *s)
 			s++;
 	}
 	res[i] = NULL;

@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 10:21:45 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/07/28 21:12:38 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/07/30 16:33:54 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ char const *s1, char const *set)
 	int	i;
 
 	i = 0;
+	if (!s1)
+		return ;
 	*size = ft_strlen((char *)s1);
 	while (istrimmed(s1[i], set))
 	{

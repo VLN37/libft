@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 10:17:13 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/07/27 10:17:38 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/07/30 16:28:58 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strdup(const char *src)
 
 	i = 0;
 	dest = malloc(sizeof(char) * (ft_strlen((char *)src) + 1));
+	if (!dest)
+		return (NULL);
 	while (src[i])
 	{
 		dest[i] = src[i];
