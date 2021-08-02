@@ -1,5 +1,6 @@
 #include "libft.h"
 
+//Writes the number N in the provided file descriptor
 void	ft_putnbr_fd(int n, int fd)
 {
 	char	p;

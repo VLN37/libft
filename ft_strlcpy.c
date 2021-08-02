@@ -6,13 +6,21 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 11:26:42 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/07/30 16:15:13 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/08/02 13:13:49 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//copy SIZE bytes from SRC into DEST
+/**
+ * @brief Copies SIZE bytes of SRC into DEST, guaranteeing to NULL terminate
+ * the result, as long as SIZE is at least 1.
+ * @param dest the destination string, it needs to have enough space to receive
+ * SIZE bytes
+ * @param src the string to be copied from
+ * @param size the maximum amount of bytes that should be copied
+ * @return size_t - the length of SRC
+ */
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	i;

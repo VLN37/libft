@@ -6,13 +6,14 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 10:09:34 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/07/27 10:14:45 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/08/02 16:48:18 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//returns the address of the first ocurrence of C in S
+//returns the address of the first ocurrence of C in the first N bytes
+//of S, NULL if none
 void	*ft_memchr (const void *s, int c, size_t n)
 {
 	void	*tmp;

@@ -6,14 +6,16 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 10:11:43 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/07/30 14:39:12 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/08/02 12:34:35 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//copies N bytes of memory from SRC into  DEST with treatment for possibly
-//overlapping addresses
+/**
+ * @brief copies N bytes of memory from SRC into  DEST with treatment for
+ * possibly overlapping addresses
+ */
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	void	*ptr;

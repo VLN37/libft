@@ -64,6 +64,11 @@ static void	reverse_string(char *tab)
 	}
 }
 
+/**
+ * @brief Receives an int number and returns it as a freshly allocated string
+ * @param nbr the number to be converted
+ * @return char * - the address of the allocated string
+ */
 char	*ft_itoa(int nbr)
 {
 	int		size;

@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 10:15:30 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/07/30 17:20:51 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/08/02 12:50:28 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,15 @@ static int	strsize(char *s, char c)
 	return (i);
 }
 
+/**
+ * @brief Receives a string and returns a freshly allocated array of strings.
+ * The string is cut every time C is found, removing it from the string.
+ *
+ * @param s the string to be separated
+ * @param c the delimiter character
+ * @return char** - freshly allocated array of strings that needs to be
+ * freed later
+ */
 char	**ft_split(char const *s, char c)
 {
 	int		strctr;

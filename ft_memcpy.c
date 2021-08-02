@@ -6,13 +6,15 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 10:11:17 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/07/30 16:28:13 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/08/02 12:33:58 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//copies N bytes of memory from SRC into DEST
+/**
+ * @brief copies N bytes of memory from SRC into DEST
+ */
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	void	*ptr;

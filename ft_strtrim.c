@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 10:21:45 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/07/30 16:33:54 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/08/02 13:19:57 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,14 @@ char const *s1, char const *set)
 	}
 }
 
-//trims SET from the start and end of the string s1, returns a freshly
-//allocated string with the remaining characters
+/**
+ * @brief trims SET from the start and end of the string s1, returns a freshly
+allocated string with the remaining characters
+ *
+ * @param s1 the string to be trimmed
+ * @param set the set of characters that should be removed
+ * @return char* the address of the freshly allocated string
+ */
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t		size;

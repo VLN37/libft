@@ -6,13 +6,14 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 10:21:28 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/07/27 10:21:28 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/08/02 13:18:43 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//returns the address of the first match of TO_FIND in STR, NULL if none
+//returns the starting address of the first match of TO_FIND in STR, NULL if
+//none
 char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 {
 	size_t	i;

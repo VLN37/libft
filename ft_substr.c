@@ -13,30 +13,33 @@ unsigned int start, char const *s)
 		return (1);
 }
 
-//creates a substring of 's' starting
-//from the index 'start' of maximum size 'len'
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+/**
+ * @brief Returns a freshly allocated string starting from the Nth element of
+ * S and with at most len bytes. If parameters are invalid, the string will be
+ * empty.
+ */
+char	*ft_substr(char const *s, unsigned int n, size_t len)
 {
 	unsigned int	i;
 	char			*adrs;
 
 	if (!s)
 		return (NULL);
-	if (start > ft_strlen(s))
+	if (n > ft_strlen(s))
 		return (ft_strdup(""));
-	if (ft_strlen((s + start)) + 1 > len)
+	if (ft_strlen((s + n)) + 1 > len)
 	{
-		if (!(ft_createstr(&adrs, len, start, s)))
+		if (!(ft_createstr(&adrs, len, n, s)))
 			return (NULL);
 	}
 	else
 	{
-		if (!(ft_createstr(&adrs, ft_strlen((s + start)), start, s)))
+		if (!(ft_createstr(&adrs, ft_strlen((s + n)), n, s)))
 			return (NULL);
 	}
 	i = 0;
-	while (i < len && s[start + i])
-		*adrs++ = s[start + i++];
+	while (i < len && s[n + i])
+		*adrs++ = s[n + i++];
 	if (i <= len)
 		*adrs = 0;
 	return (adrs - i);
