@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 21:52:48 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/07/31 21:58:39 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/08/01 22:08:36 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int	ft_lstsize(t_list *lst)
 
 	if (!lst)
 		return (0);
-	i = 1;
-	while (lst->next)
+	i = 0;
+	while (lst)
 	{
 		lst = lst->next;
 		i++;

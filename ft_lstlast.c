@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 23:05:20 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/07/31 23:07:17 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/08/02 11:48:38 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,5 @@ t_list	*ft_lstlast(t_list *lst)
 		return (NULL);
 	while (lst->next)
 		lst = lst->next;
-	return(lst);
+	return (lst);
 }

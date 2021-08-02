@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 22:00:22 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/07/31 22:21:52 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/08/02 11:47:47 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	if (!lst)
 		return ;
