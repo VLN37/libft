@@ -87,9 +87,47 @@ int	tolowersupport(void)
 	return (1);
 }
 
+int splitsupport(char **split)
+{
+	int i = 0;
+	if (strcmp(split[0], "let's"))
+		return (1);
+	if (strcmp(split[1], "split"))
+		return (1);
+	if (strcmp(split[2], "this"))
+		return (1);
+	if (strcmp(split[3], "for"))
+		return (1);
+	if (strcmp(split[4], "glory"))
+		return (1);
+	if (strcmp(split[5], "!"))
+		return (1);
+	return (0);
+}
+
+char toupperr(unsigned int i, char c)
+{
+	if (c >= 'a' && c <= 'z')
+		c = c - 32;
+	return(c);
+}
+
+void toupperriter(unsigned int i, char *c)
+{
+	if (*c >= 'a' && *c <= 'z')
+		*c = *c - 32;
+}
+
+static void del(void *content)
+{
+	if (*(char *)content)
+		free(content);
+}
+
 int	main(void)
 {
 
+	int i = 0;
 	//ft_isalpha
 	if (ft_isalpha(EOF))
 		printf("[KO] Isalpha returns 1 on EOF\n");
@@ -205,12 +243,47 @@ int	main(void)
 		printf("[OK] ft_bzero\n");
 
 	//memcpy
+	int array1[] = {1, 2, 3};
+	int array2[] = {4, 5, 6};
+	int array3[] = {7, 8, 9};
+	memcpy(array2, array1, 12);
+	ft_memcpy(array3, array1, 12);
+	if (memcmp(array2, array3, 12))
+		printf("[KO] memcpy\n");
+	else
+		printf("[OK] ft_memcpy\n");
 
 	//memmove
+	char move1[] = "abcd";
+	char move2[] = "cdba";
+	char move3[] = "cdba";
+
+	memmove(&move2[2], move1, 2);
+	ft_memmove(&move3[2], move1, 2);
+	if(strcmp(move2, move3))
+		printf("[KO] strings are not the same\n");
+	else
+		printf("[OK] ft_memmove\n");
 
 	//strlcpy
+	char lcpy1[] = "ninjaninja";
+	char lcpy2[] = "imnotninja";
+	char lcpy3[] = "ninjaninja";
+	ft_strlcpy(lcpy2, lcpy1, 11);
+	if (strcmp(lcpy2, lcpy3))
+		printf("[KO] strlcpy strings are not the same\n");
+	else
+		printf("[OK] ft_strlcpy\n");
 
 	//strlcat
+	char lcat1[50] = "these strings";
+	char lcat2[] = " are together!";
+	char lcat3[] = "these strings are together!";
+	ft_strlcat(lcat1, lcat2, 30);
+	if (ft_strncmp(lcat1, lcat3, 30))
+		printf("[KO] strlcat strings are not the same\n");
+	else
+		printf("[OK] ft_strlcat\n");
 
 	//toupper
 	if (ft_toupper(123) != 123)
@@ -331,6 +404,55 @@ int	main(void)
 
 	printf ("\n----- Part 2-----\n");
 
+	//substr
+	char substr1[] = "this is not cut and this is cut";
+	char *substr2 = ft_substr(substr1, 0, 15);
+	if (strcmp(substr2, "this is not cut"))
+		printf("[KO] substr not corrrect\n");
+	else
+		printf("[OK] ft_substr\n");
+
+	//strjoin
+	char strjoin1[] = "Don't panic";
+	char strjoin2[] = " plz";
+	char *strjoin3 = ft_strjoin(strjoin1, strjoin2);
+	if (strcmp(strjoin3, "Don't panic plz"))
+		printf("[KO] strjoin strings are not concatenated\n");
+	else
+		printf("[OK] ft_strjoin\n");
+
+	//strtrim
+	char *strtrim1 = "   Don't Panic!   ";
+	char *strtrim2 = "1232Don't Panic!";
+	char *strtrim3 = "Don't Panic123221";
+	char *strtrim4 = "Don't Panic!";
+	strtrim1 = ft_strtrim("   Don't Panic!   ", " ");
+	strtrim2 = ft_strtrim("1232Don't Panic!", "123");
+	strtrim3 = ft_strtrim("Don't Panic!123221", "123");
+	if (strcmp(strtrim1, strtrim4))
+		printf("[KO] strtrim fails on test 1\n");
+	else if (strcmp(strtrim2, strtrim4))
+		printf("[KO] strtrim fails on test 2\n");
+	else if (strcmp(strtrim3, strtrim4))
+		printf("[KO] strtrim fails on test 3\n");
+	else
+		printf("[OK] ft_strtrim\n");
+	free(strtrim1);
+	free(strtrim2);
+	free(strtrim3);
+
+	//split
+	char **split2;
+	split2 = ft_split("  let's split this for   glory !     ", ' ');
+	if (splitsupport(split2))
+		printf("[KO] split array is not as expected\n");
+	else
+		printf("[OK] ft_split\n");
+	while(split2[i])
+		free(split2[i++]);
+	i = 0;
+
+
 	//itoa
 	if(strncmp(ft_itoa(0), "0", 2) != 0)
 		printf("[KO] itoa fails on 0\n");
@@ -338,6 +460,8 @@ int	main(void)
 		printf("[KO] itoa fails on test 1\n");
 	else if (strncmp(ft_itoa(-10), "-10", 4) != 0)
 		printf("[KO] itoa fails on negative\n");
+	else if (strncmp(ft_itoa(12354), "12354", 7) != 0)
+		printf("[KO] itoa\n");
 	else if (strncmp(ft_itoa(2147483647), "2147483647", 11) != 0)
 		printf("[KO] itoa fails on INT_MAX\n");
 	else if (strncmp(ft_itoa(-2147483648), "-2147483648", 12) != 0)
@@ -345,5 +469,53 @@ int	main(void)
 	else
 		printf("[OK] ft_itoa\n");
 
+	//strmapi
+	char *strmapi1;
+	strmapi1 = ft_strmapi("capitalizethis", &toupperr);
+	if (strcmp(strmapi1, "CAPITALIZETHIS"))
+		printf("[KO] strmapi does not capitalize your string\n");
+	else
+		printf("[OK] ft_strmapi\n");
+	free(strmapi1);
+
+	//striteri
+	char striteri1[] = "capitalizethis";
+	ft_striteri(striteri1, &toupperriter);
+	if (strcmp(striteri1, "CAPITALIZETHIS"))
+		printf("[KO] striteri does not capitalize the string\n");
+	else
+		printf("[OK] ft_striteri\n");
+
+	//putchar_fd
+
+	//putstr_fd
+
+	//putendl_fd
+
+	//putnbr_fd
+
 	printf ("\n----- Bonus part-----\n");
+
+	//lstnew
+	t_list *new1;
+	new1 = ft_lstnew("monstro");
+	if (!new1)
+		printf("[KO] lstnew node does not exist\n");
+	else if (strcmp("monstro", (char *)new1->content))
+		printf("[KO] lstnew content was not written\n");
+	else
+		printf("[OK] ft_lstnew\n");
+	free(new1);
+
+	//lstadd_front
+	// t_list *head;
+	// head = ft_lstnew(ft_strdup("monstro bagarai"));
+	// ft_lstadd_front(&head, ft_lstnew(ft_strdup("você é")));
+	// while(head)
+	// {
+	// 	printf("%s\n", (char *)head->content);
+	// 	head = head->next;
+	// }
+	// ft_lstclear(&head, del);
 }
+

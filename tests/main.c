@@ -133,6 +133,15 @@ int	main(void)
 		printf("[OK] ft_bzero\n");
 
 	//memcpy
+	int *array1 = {1, 2, 3};
+	int *array2 = {4, 5, 6};
+	int *array3 = {7, 8, 9};
+	memcpy(array1, array2, 12);
+	ft_memcpy(array1, array3, 12);
+	if (memcmp(array2, array3, 12))
+		printf("[KO] memcpy\n");
+	else
+		printf("[OK] ft_memcpy\n");
 
 	//memchr
 	char str7[] = "hello";
