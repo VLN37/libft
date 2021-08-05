@@ -36,7 +36,7 @@ ${NAME}:	${OBJ}
 .c.o:
 			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
-bonus:		${OBJBONUS}
+bonus:		${NAME} ${OBJBONUS}
 			${AR} ${ARFLAGS} ${NAME} ${OBJBONUS}
 
 so:

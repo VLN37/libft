@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:05:07 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/04 20:54:35 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/08/05 00:18:08 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -268,11 +268,11 @@ int	main(void)
 		printf("[OK] ft_memset\n");
 
 	//bzero
-	bzero(str1, 1);
+	memset(str1, 0, 1);
 	ft_bzero(str2, 1);
-	bzero(str3, 9);
+	memset(str3, 0, 9);
 	ft_bzero(str4, 9);
-	bzero(str5, 15);
+	memset(str5, 0, 15);
 	ft_bzero(str6, 15);
 	if (strncmp(str1, str2, 1))
 		printf("[KO] bzero fails on test 1\n");

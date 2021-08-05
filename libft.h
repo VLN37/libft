@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 20:34:20 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/02 11:47:22 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/08/05 01:43:35 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,10 @@ void		*ft_memcpy(void *dest, const void *src, size_t n);
 void		*ft_memmove(void *dest, const void *src, size_t n);
 char		*ft_strdup(const char *src);
 char		*ft_strcpy(char *dest, char *src);
-char		*ft_strncpy(char *dest, char *src, unsigned int n);
 char		*ft_strcat(char *dest, char *src);
-char		*ft_strncat(char *dest, char *src, unsigned int nb);
 char		*ft_strchr(const char *str, int c);
-char		*ft_strstr(char *str, char *to_find);
 char		*ft_strrchr(const char *str, int c);
 char		*ft_strnstr(const char *str, const char *to_find, size_t n);
-int			ft_strcmp(char *s1, char *s2);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 int			ft_atoi(const char *str);
 int			ft_isalpha(int c);
