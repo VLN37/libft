@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 10:21:45 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/02 13:19:57 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/08/05 03:06:18 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t		start;
 	char		*res;
 
+	if (!s1)
+		return (NULL);
 	setvariables(&size, &start, s1, set);
 	res = (char *)ft_calloc(size + 1, sizeof(char));
 	if (!res)
