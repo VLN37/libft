@@ -20,7 +20,7 @@ SRCSBONUS	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 
 OBJ			= ${SRCS:.c=.o}
 OBJBONUS	= ${SRCSBONUS:.c=.o}
-INCLUDE		= libft.h
+
 NAME		= libft.a
 CC			= clang
 AR			= ar
@@ -39,9 +39,6 @@ ${NAME}:	${OBJ}
 bonus:		${OBJBONUS}
 			${AR} ${ARFLAGS} ${NAME} ${OBJBONUS}
 
-compile:
-			gcc -Wall -Wextra -Werror ft_itoa.c
-
 so:
 			$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
 			gcc -nostartfiles -shared -o libft.so $(OBJ)
@@ -52,6 +49,8 @@ clean:
 fclean:		clean
 			${RM} ${NAME}
 
+run:		all clean
+
 re:			fclean all
 
-.PHONY:		all clean fclean re
+.PHONY:		all clean fclean re run

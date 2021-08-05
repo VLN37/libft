@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 23:26:46 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/02 13:31:03 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/08/04 23:34:08 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	if (!lst || !del)
 		return ;
 	curr = *lst;
-	while (curr->next)
+	while (curr)
 	{
 		prev = curr;
 		curr = curr->next;
@@ -30,8 +30,5 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 			del(prev->content);
 		free(prev);
 	}
-	if (curr->content)
-		del(curr->content);
-	free(curr);
 	*lst = NULL;
 }

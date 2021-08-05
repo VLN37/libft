@@ -1,6 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/04 16:05:07 by jofelipe          #+#    #+#             */
+/*   Updated: 2021/08/04 20:54:35 by jofelipe         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include"libft.h"
 #include <stdio.h>
 #include <string.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 
 int	isalphasupport(void)
 {
@@ -120,8 +135,32 @@ void toupperriter(unsigned int i, char *c)
 
 static void del(void *content)
 {
-	if (*(char *)content)
-		free(content);
+	if (content)
+		content = NULL;
+}
+
+void lstprint(t_list *head)
+{
+	while(head)
+	{
+		if (head->content != NULL)
+			printf("%s\n", (char *)head->content);
+		head = head->next;
+	}
+}
+
+int	lstsupport(t_list *begin, char **strs)
+{
+	int	i;
+	i = 0;
+	while(begin)
+	{
+		if(strcmp((char *)begin->content, strs[i]))
+			return(1);
+		i++;
+		begin = begin->next;
+	}
+	return (0);
 }
 
 int	main(void)
@@ -191,10 +230,12 @@ int	main(void)
 	//isprint
 	if (ft_isprint(19))
 		printf("[KO] isprint returns 1 on 19\n");
-	if (ft_isprint(127))
+	else if (ft_isprint(127))
 		printf("[KO] isprint returns 1 on 127\n");
-	if (!isprintsupport())
+	else if (!isprintsupport())
 		printf("[KO] isprint returns 0 on printable characters\n");
+	else
+		printf("[OK] ft_isprint\n");
 
 	//strlen
 	if (ft_strlen("Hello World!") != 12)
@@ -487,12 +528,96 @@ int	main(void)
 		printf("[OK] ft_striteri\n");
 
 	//putchar_fd
+	int	fd;
+	char charfd[5];
 
-	//putstr_fd
+	fd = open("ghost", O_RDWR | O_CREAT);
+	ft_putchar_fd('a', fd);
+	lseek(fd, SEEK_SET, 0);
+	read(fd, charfd, 2);
+	close(fd);
+	if (strncmp("a", charfd, 1))
+		printf("[KO] putchar_fd, content was not written\n");
+	else
+		printf("[OK] ft_putchar_fd\n");
+	unlink("./ghost");
+
+	// putstr_fd
+	char strfd[50];
+
+	fd = open("ghost", O_RDWR | O_CREAT);
+	ft_putstr_fd("don't panic!", fd);
+	lseek(fd, SEEK_SET, 0);
+	read(fd, strfd, 12);
+	close(fd);
+	if(strncmp("don't panic!", strfd, 12))
+		printf("[KO] str_fd does not write on file\n");
+	else
+		printf("[OK] ft_putstr_fd\n");
+	unlink("./ghost");
 
 	//putendl_fd
+	char endlfd[50];
+
+	fd = open("ghost", O_RDWR | O_CREAT);
+	ft_putendl_fd("don't panic!", fd);
+	lseek(fd, SEEK_SET, 0);
+	read(fd, endlfd, 13);
+	if (strncmp("don't panic!\n", endlfd, 13))
+		printf("[KO] putendl_fd does not write correctly\n");
+	else
+		printf("[OK] ft_putendl_fd\n");
+	unlink("./ghost");
 
 	//putnbr_fd
+	char putnbrfd1[50];
+	char putnbrfd2[50];
+	char putnbrfd3[50];
+	char putnbrfd4[50];
+	char putnbrfd5[50];
+
+	fd = open("ghost", O_RDWR | O_CREAT);
+	ft_putnbr_fd(-2147483648, fd);
+	lseek(fd, SEEK_SET, 0);
+	read(fd, putnbrfd1, 11);
+	unlink("./ghost");
+
+	fd = open("ghost", O_RDWR | O_CREAT);
+	ft_putnbr_fd(2147483647, fd);
+	lseek(fd, SEEK_SET, 0);
+	read(fd, putnbrfd2, 11);
+	unlink("./ghost");
+
+	fd = open("ghost", O_RDWR | O_CREAT);
+	ft_putnbr_fd(1337, fd);
+	lseek(fd, SEEK_SET, 0);
+	read(fd, putnbrfd3, 4);
+	unlink("./ghost");
+
+	fd = open("ghost", O_RDWR | O_CREAT);
+	ft_putnbr_fd(0, fd);
+	lseek(fd, SEEK_SET, 0);
+	read(fd, putnbrfd4, 1);
+	unlink("./ghost");
+
+	fd = open("ghost", O_RDWR | O_CREAT);
+	ft_putnbr_fd(-0, fd);
+	lseek(fd, SEEK_SET, 0);
+	read(fd, putnbrfd5, 1);
+	unlink("./ghost");
+
+	if (strncmp(putnbrfd1, "-2147483648", 11))
+		printf("[KO] putnbr_fd fails on int MIN\n");
+	else if (strncmp(putnbrfd2, "2147483647", 10))
+		printf("[KO] putnbr_fd fails on int MAX\n");
+	else if (strncmp(putnbrfd3, "1337", 4))
+		printf("[KO] putnbr_fd fails on test 3\n");
+	else if (strncmp(putnbrfd4, "0", 1))
+		printf("[KO] putnbr_fd fails on 0\n");
+	else if (strncmp(putnbrfd5, "0", 1))
+		printf("[KO] putnbr_fd fails on -0\n");
+	else
+		printf("[OK] ft_putnbr_fd\n");
 
 	printf ("\n----- Bonus part-----\n");
 
@@ -508,14 +633,61 @@ int	main(void)
 	free(new1);
 
 	//lstadd_front
-	// t_list *head;
-	// head = ft_lstnew(ft_strdup("monstro bagarai"));
-	// ft_lstadd_front(&head, ft_lstnew(ft_strdup("você é")));
-	// while(head)
-	// {
-	// 	printf("%s\n", (char *)head->content);
-	// 	head = head->next;
-	// }
-	// ft_lstclear(&head, del);
-}
+	t_list *head;
+	char *add_front[] =	{"linked", "list", NULL};
 
+	head = ft_lstnew(("list"));
+	ft_lstadd_front(&head, ft_lstnew(("linked")));
+	if (lstsupport(head, add_front))
+		printf("[KO] content is not the same\n");
+	else
+		printf("[OK] ft_lstadd_front\n");
+	ft_lstclear(&head, del);
+
+	//lstsize
+	t_list *head2;
+
+	char *lstsize[] = {"has", "list", "this", "strings", "5", NULL};
+	i = 1;
+	head2 = ft_lstnew(lstsize[0]);
+	while (lstsize[i])
+		ft_lstadd_front(&head2, ft_lstnew(lstsize[i++]));
+	if (ft_lstsize(head2) != 5)
+		printf("[KO] lstsize returns incorrect size\n");
+	else
+		(printf("[OK] ft_lstsize\n"));
+
+	//lstlast
+	t_list *last;
+
+	last = ft_lstlast(head2);
+	if (last->next)
+		printf("[KO] lstlast->next pointer is not NULL\n");
+	else if (strcmp(last->content, "has"))
+		printf("[KO] strings of the last element do not match\n");
+	else
+		printf("[OK] ft_lstlast\n");
+
+	//lstadd_back
+	t_list *head3;
+
+	char *add_back[] = {"you", "are", "BALLER", NULL};
+	i = 0;
+	head3 = ft_lstnew(add_back[i++]);
+	while(add_back[i])
+		ft_lstadd_back(&head3, ft_lstnew(add_back[i++]));
+	if (lstsupport(head3, add_back))
+		printf("[KO] contents are not as expected\n");
+	else
+		printf("[OK] ft_lstadd_back\n");
+
+	//lstdelone
+	t_list *delone = ft_lstnew("hello");
+	ft_lstdelone(delone, &del);
+	if (delone->content)
+		printf("[KO] content was not deleted\n");
+	else
+		printf("[OK] ft_delone\n");
+
+	//lstclear
+	}
