@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 15:24:44 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/02 15:27:27 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/08/11 09:10:52 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			ft_lstclear(&newlst, del);
 			return (NULL);
 		}
-		if (tmp->content)
-			tmp->content = f(tmp->content);
+		tmp->content = f(tmp->content);
 		ft_lstadd_back(&newlst, tmp);
 		lst = lst->next;
 	}

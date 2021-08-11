@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 10:21:45 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/05 03:06:18 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/08/07 23:31:52 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,13 @@ static int	istrimmed(char c, char const *set)
 	return (0);
 }
 
+
+/**
+ * @brief determines the starting parameters for trim to work
+ *
+ * @param size dereferences the amount of bytes that will be written
+ * @param start dereferences the starting index to work with
+ */
 static void	setvariables(size_t *size, size_t *start,
 char const *s1, char const *set)
 {

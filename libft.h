@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 20:34:20 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/05 01:43:35 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/08/05 03:16:17 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct s_list
 void		*ft_memset(void *str, int c, size_t len);
 void		*ft_calloc(size_t nbr, size_t size);
 size_t		ft_strlen(const char *str);
-void		*ft_memchr (const void *s, int c, size_t n);
+void		*ft_memchr(const void *s, int c, size_t n);
 int			ft_memcmp(const void *s1, const void *s2, size_t n);
 void		ft_bzero(void *str, size_t len);
 size_t		ft_strlcpy(char *dest, const char *src, size_t size);

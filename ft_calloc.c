@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 10:06:02 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/02 12:24:08 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/08/05 17:25:13 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,7 @@ void	*ft_calloc(size_t nbr, size_t size)
 		return (NULL);
 	tmp = ptr;
 	bytes = nbr * size;
-	while (bytes > 0)
-	{
-		*(char *)ptr = '\0';
-		ptr++;
-		bytes--;
-	}
+	while (bytes-- > 0)
+		*(char *)ptr++ = '\0';
 	return (tmp);
 }

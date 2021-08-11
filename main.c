@@ -6,11 +6,12 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:05:07 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/05 00:18:08 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/08/06 21:27:38 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
+#include "libft_bonus.h"
 #include <stdio.h>
 #include <string.h>
 #include <sys/types.h>
@@ -484,13 +485,22 @@ int	main(void)
 
 	//split
 	char **split2;
+	char **split3;
 	split2 = ft_split("  let's split this for   glory !     ", ' ');
+	split3 = ft_split( "1-2-3-4-5-6-7-8--8-8--8-4------4--4", '-');
+	i = -1;
+	while (split3[++i])
+		printf("%s\n", split3[i]);
 	if (splitsupport(split2))
 		printf("[KO] split array is not as expected\n");
 	else
 		printf("[OK] ft_split\n");
+	i = 0;
 	while(split2[i])
 		free(split2[i++]);
+	i = 0;
+	while(split3[i])
+		free(split3[i++]);
 	i = 0;
 
 
@@ -682,12 +692,12 @@ int	main(void)
 		printf("[OK] ft_lstadd_back\n");
 
 	//lstdelone
-	t_list *delone = ft_lstnew("hello");
-	ft_lstdelone(delone, &del);
-	if (delone->content)
-		printf("[KO] content was not deleted\n");
-	else
-		printf("[OK] ft_delone\n");
+	// t_list *delone = ft_lstnew("hello");
+	// ft_lstdelone(delone, &del);
+	// if (delone->content)
+	// 	printf("[KO] content was not deleted\n");
+	// else
+	// 	printf("[OK] ft_delone\n");
 
 	//lstclear
 	}
