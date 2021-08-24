@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 10:06:02 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/13 08:36:36 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/08/24 01:30:43 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ void	*ft_calloc(size_t nbr, size_t size)
 {
 	void	*ptr;
 
-	if (!nbr || !size)
-		return (NULL);
 	ptr = malloc(nbr * size);
 	if (ptr == NULL)
 		return (NULL);
