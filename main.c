@@ -6,12 +6,11 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:05:07 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/06 21:27:38 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/08/13 11:39:38 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"libft.h"
-#include "libft_bonus.h"
 #include <stdio.h>
 #include <string.h>
 #include <sys/types.h>
@@ -140,29 +139,29 @@ static void del(void *content)
 		content = NULL;
 }
 
-void lstprint(t_list *head)
-{
-	while(head)
-	{
-		if (head->content != NULL)
-			printf("%s\n", (char *)head->content);
-		head = head->next;
-	}
-}
+// void lstprint(t_list *head)
+// {
+// 	while(head)
+// 	{
+// 		if (head->content != NULL)
+// 			printf("%s\n", (char *)head->content);
+// 		head = head->next;
+// 	}
+// }
 
-int	lstsupport(t_list *begin, char **strs)
-{
-	int	i;
-	i = 0;
-	while(begin)
-	{
-		if(strcmp((char *)begin->content, strs[i]))
-			return(1);
-		i++;
-		begin = begin->next;
-	}
-	return (0);
-}
+// int	lstsupport(t_list *begin, char **strs)
+// {
+// 	int	i;
+// 	i = 0;
+// 	while(begin)
+// 	{
+// 		if(strcmp((char *)begin->content, strs[i]))
+// 			return(1);
+// 		i++;
+// 		begin = begin->next;
+// 	}
+// 	return (0);
+// }
 
 int	main(void)
 {
@@ -631,65 +630,65 @@ int	main(void)
 
 	printf ("\n----- Bonus part-----\n");
 
-	//lstnew
-	t_list *new1;
-	new1 = ft_lstnew("monstro");
-	if (!new1)
-		printf("[KO] lstnew node does not exist\n");
-	else if (strcmp("monstro", (char *)new1->content))
-		printf("[KO] lstnew content was not written\n");
-	else
-		printf("[OK] ft_lstnew\n");
-	free(new1);
+	// //lstnew
+	// t_list *new1;
+	// new1 = ft_lstnew("monstro");
+	// if (!new1)
+	// 	printf("[KO] lstnew node does not exist\n");
+	// else if (strcmp("monstro", (char *)new1->content))
+	// 	printf("[KO] lstnew content was not written\n");
+	// else
+	// 	printf("[OK] ft_lstnew\n");
+	// free(new1);
 
-	//lstadd_front
-	t_list *head;
-	char *add_front[] =	{"linked", "list", NULL};
+	// //lstadd_front
+	// t_list *head;
+	// char *add_front[] =	{"linked", "list", NULL};
 
-	head = ft_lstnew(("list"));
-	ft_lstadd_front(&head, ft_lstnew(("linked")));
-	if (lstsupport(head, add_front))
-		printf("[KO] content is not the same\n");
-	else
-		printf("[OK] ft_lstadd_front\n");
-	ft_lstclear(&head, del);
+	// head = ft_lstnew(("list"));
+	// ft_lstadd_front(&head, ft_lstnew(("linked")));
+	// if (lstsupport(head, add_front))
+	// 	printf("[KO] content is not the same\n");
+	// else
+	// 	printf("[OK] ft_lstadd_front\n");
+	// ft_lstclear(&head, del);
 
-	//lstsize
-	t_list *head2;
+	// //lstsize
+	// t_list *head2;
 
-	char *lstsize[] = {"has", "list", "this", "strings", "5", NULL};
-	i = 1;
-	head2 = ft_lstnew(lstsize[0]);
-	while (lstsize[i])
-		ft_lstadd_front(&head2, ft_lstnew(lstsize[i++]));
-	if (ft_lstsize(head2) != 5)
-		printf("[KO] lstsize returns incorrect size\n");
-	else
-		(printf("[OK] ft_lstsize\n"));
+	// char *lstsize[] = {"has", "list", "this", "strings", "5", NULL};
+	// i = 1;
+	// head2 = ft_lstnew(lstsize[0]);
+	// while (lstsize[i])
+	// 	ft_lstadd_front(&head2, ft_lstnew(lstsize[i++]));
+	// if (ft_lstsize(head2) != 5)
+	// 	printf("[KO] lstsize returns incorrect size\n");
+	// else
+	// 	(printf("[OK] ft_lstsize\n"));
 
-	//lstlast
-	t_list *last;
+	// //lstlast
+	// t_list *last;
 
-	last = ft_lstlast(head2);
-	if (last->next)
-		printf("[KO] lstlast->next pointer is not NULL\n");
-	else if (strcmp(last->content, "has"))
-		printf("[KO] strings of the last element do not match\n");
-	else
-		printf("[OK] ft_lstlast\n");
+	// last = ft_lstlast(head2);
+	// if (last->next)
+	// 	printf("[KO] lstlast->next pointer is not NULL\n");
+	// else if (strcmp(last->content, "has"))
+	// 	printf("[KO] strings of the last element do not match\n");
+	// else
+	// 	printf("[OK] ft_lstlast\n");
 
-	//lstadd_back
-	t_list *head3;
+	// //lstadd_back
+	// t_list *head3;
 
-	char *add_back[] = {"you", "are", "BALLER", NULL};
-	i = 0;
-	head3 = ft_lstnew(add_back[i++]);
-	while(add_back[i])
-		ft_lstadd_back(&head3, ft_lstnew(add_back[i++]));
-	if (lstsupport(head3, add_back))
-		printf("[KO] contents are not as expected\n");
-	else
-		printf("[OK] ft_lstadd_back\n");
+	// char *add_back[] = {"you", "are", "BALLER", NULL};
+	// i = 0;
+	// head3 = ft_lstnew(add_back[i++]);
+	// while(add_back[i])
+	// 	ft_lstadd_back(&head3, ft_lstnew(add_back[i++]));
+	// if (lstsupport(head3, add_back))
+	// 	printf("[KO] contents are not as expected\n");
+	// else
+	// 	printf("[OK] ft_lstadd_back\n");
 
 	//lstdelone
 	// t_list *delone = ft_lstnew("hello");
