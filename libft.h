@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 20:34:20 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/11 10:26:49 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/09/09 22:57:10 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
 typedef struct s_list
 {
@@ -35,6 +39,7 @@ void		*ft_memmove(void *dest, const void *src, size_t n);
 char		*ft_strdup(const char *src);
 char		*ft_strchr(const char *str, int c);
 char		*ft_strrchr(const char *str, int c);
+char		*ft_strnchr(const char *str, int len, int c);
 char		*ft_strnstr(const char *str, const char *to_find, size_t n);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 int			ft_atoi(const char *str);
@@ -50,6 +55,7 @@ char		*ft_strjoin(char const *s1, char const *s2);
 char		*ft_strtrim(char const *s1, char const *set);
 char		**ft_split(char const *s, char c);
 char		*ft_itoa(int nbr);
+char		*get_next_line(int fd);
 void		ft_striteri(char *s, void (*f)(unsigned int, char *));
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void		ft_putchar_fd(char c, int fd);
