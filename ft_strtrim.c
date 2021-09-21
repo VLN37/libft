@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 10:21:45 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/07 23:31:52 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/09/21 11:53:50 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ static int	istrimmed(char c, char const *set)
 	}
 	return (0);
 }
-
 
 /**
  * @brief determines the starting parameters for trim to work
