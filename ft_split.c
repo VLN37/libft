@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 10:15:30 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/09/26 16:18:15 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/09/29 03:13:30 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ static int	strcount(char const *s, char c, int *l)
 			s++;
 		if (*s && *s != c)
 		{
-			if (*s == 39 && !ft_strncmp(s, "' '", 3))
-				 s += 2;
 			while (*s && *s != c)
 				s++;
 			i++;
@@ -43,11 +41,6 @@ static int	strsize(char *s, char c)
 	i = 0;
 	while (*s && *s != c)
 	{
-		if (*s == 39 && !ft_strncmp(s, "' '", 3))
-		{
-			s += 2;
-			i += 2;
-		}
 		s++;
 		i++;
 	}
