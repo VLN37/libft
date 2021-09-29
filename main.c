@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:05:07 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/13 11:39:38 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/09/29 01:23:43 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -699,4 +699,27 @@ int	main(void)
 	// 	printf("[OK] ft_delone\n");
 
 	//lstclear
+
+	printf("-------- aditional functions----------");
+
+
+	//str_replace_all
+	char *newpat = "0x99";
+	char *oldpat = " ' '";
+	char *str = "'hello' 'guys' ' ' ' ' ' 'i am robot'";
+	str = ft_strdup(str);
+	// while(ft_strnstr(str, " ' '", ft_strlen(str)))
+	// 	str = str_replace(str, oldpat, newpat);
+	// printf("%s\n", str);
+	// while(ft_strnstr(str, "0x99", ft_strlen(str)))
+	// 	str = str_replace(str, newpat, oldpat);
+
+	free (str);
+	str = ft_strdup("");
+	str = str_replace_all(str, oldpat, newpat);
+	printf("%s\n", str);
+	str = str_replace_all(str, newpat, oldpat);
+	printf("%s\n", str);
+
+	free(str);
 	}

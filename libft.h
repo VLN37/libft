@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 20:34:20 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/09/09 22:57:10 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/09/29 01:25:56 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,7 @@ void		ft_lstdelone(t_list *lst, void (*del)(void *));
 void		ft_lstclear(t_list **lst, void (*del)(void*));
 void		ft_lstiter(t_list *lst, void (*f)(void *));
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+char		*str_replace(char *str, char *old, char *new);
+char		*str_replace_all(char *str, char *old, char *new);
 
 #endif
