@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 20:34:20 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/09/29 01:25:56 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/09/30 04:45:17 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,8 @@ void		ft_lstiter(t_list *lst, void (*f)(void *));
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 char		*str_replace(char *str, char *old, char *new);
 char		*str_replace_all(char *str, char *old, char *new);
+char		*ft_uitoa(unsigned int nbr);
+char		*ft_uitoa_base(unsigned long nbr, char *base_to, unsigned long \
+basesize);
 
 #endif
