@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_uitoa_base.c                                    :+:      :+:    :+:   */
+/*   ftex_ftex_uitoa_base.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 04:46:19 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/09/30 04:40:43 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/10/05 14:02:46 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static int	count_numbers(unsigned long nbr, int basesize)
 	return (i);
 }
 
-char	*ft_uitoa_base(unsigned long nbr, char *base_to, unsigned long basesize)
+char	*ft_ftex_ftex_uitoa_base(unsigned long nbr, char *base_to, unsigned long basesize)
 {
 	int		i;
 	char	*res;
