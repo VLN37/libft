@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 20:34:20 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/10/05 14:05:05 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/10/05 19:30:10 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 char		*ftex_str_replace(char *str, char *old, char *new);
 char		*ftex_str_replace_all(char *str, char *old, char *new);
 char		*ftex_uitoa(unsigned int nbr);
+long long	ftex_atoll(const char *str);
 char		*ftex_uitoa_base(unsigned long nbr, char *base_to, unsigned long \
 basesize);
 
