@@ -2,6 +2,8 @@
 
 This is the first project of the 42 Programming School.It is both an introduction to programming in C as well as a basis on which you will build the rest of the school's projects.
 
+- - -
+
 ## What i learned?
 
 This project gives an overview of many C programming concepts with a focus in string and memory manipulation, pointers and linked lists. All of which will be very helpful later on the course.
@@ -79,4 +81,6 @@ libft | description
 [ft_lstiter](/ft_lstiter.c) | applies the function *f* to the contents of every node
 [ft_lstmap](/ft_lstmap.c) | copies the entire list and applies the function *f* to the contents of every node
 
+## License
 
+This project is licensed under the BSD Simplified License, [available here](LICENSE)
