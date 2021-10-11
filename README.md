@@ -52,7 +52,6 @@ Aside from functions that make system calls everything that we create must be ba
 * [`ft_strjoin`](/ft_strjoin.c) - Concatenates two strings returning a new one
 * [`ft_strtrim`](/ft_strtrim.c) - removes a set of characters from the beggining and end of a string
 * [`ft_split`](/ft_split.c) - Slices the string into several others delimited by the character *c*
-
 * [`ft_itoa`](/ft_itoa.c) - Converts an integer into a string
 * [`ft_strmapi`](/ft_strmapi.c) - Applies a function to every character of the string
 * [`ft_striteri`](/ft_striteri.c) - Applies a function to every address of the string
