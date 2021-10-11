@@ -45,7 +45,8 @@ Aside from functions that make system calls everything that we create must be ba
 
 #### Functions from `<stdlib.h>`
 
-* [`ft_calloc`](/ft_calloc.c) - allocates *n* bytes of data and initializes them all with zeros* [`ft_atoi`](/ft_atoi.c) - Converts a string to an integer
+* [`ft_calloc`](/ft_calloc.c) - allocates *n* bytes of data and initializes them all with zeros*
+* [`ft_atoi`](/ft_atoi.c) - Converts a string to an integer
 
 #### Non-standard functions
 * [`ft_substr`](/ft_substr.c) - Extract a portion of a string
