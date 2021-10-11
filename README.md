@@ -22,12 +22,19 @@ Aside from functions that make system calls everything that we create must be ba
 
 
 [`ft_isdigit`](/ft_isdigit.c) - Checks if a given character is numeric
+
 [`ft_isalpha`](/ft_isalpha.c) - Checks if a given character is alphabetic
+
 [`ft_isalnum`](/ft_isalnum.c) - Checks if a given character is alphanumeric
+
 [`ft_isprint`](/ft_isprint.c) - Checks if a given character is printable
+
 [`ft_isascii`](/ft_isascii.c) - Checks if a given character belongs in the ASCII table
+
 [`ft_tolower`](/ft_tolower.c) - If uppercase, returns its lowercase equivalent
+
 [`ft_toupper`](/ft_toupper.c) - If lowercase, returns its uppercase equivalent
+
 
 #### Functions from `<string.h>`
 
