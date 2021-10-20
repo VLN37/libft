@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ftex_str_replace.c                                      :+:      :+:    :+:   */
+/*   ftex_str_replace.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 22:31:29 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/09/30 00:20:32 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/10/20 19:41:12 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *release(char *str)
+char	*release(char *str)
 {
 	free(str);
 	return (NULL);
