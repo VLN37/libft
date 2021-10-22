@@ -21,9 +21,13 @@ Aside from functions that make system calls everything that we create must be ba
 ## How to use
 
 `git clone https://github.com/VLN37/libft.git`
+
 `make`
+
 `clang main.c libft.a  -I ./inc && ./a.out`
+
 you can also compile your libft with my main to use my unit tests
+
 also possible to use these functions in your other C projects
 
 #### Functions from `<ctype.h>`
