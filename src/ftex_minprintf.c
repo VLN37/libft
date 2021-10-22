@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 08:22:04 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/10/22 12:00:09 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/10/22 13:53:59 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*apply_width(char *str, int len, int minus)
 	spaces = (char *)malloc(sizeof(char) * len + 1);
 	spaces[len] = '\0';
 	while (len--)
-		spaces[len] = '$';
+		spaces[len] = ' ';
 	if (minus)
 	{
 		str = ftex_strmerge(str, spaces);
