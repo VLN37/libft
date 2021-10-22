@@ -55,8 +55,9 @@ SRCFILES	= get_next_line.c \
 			  ftex_str_replace_all.c \
 			  ftex_strmerge.c \
 			  ftex_atoll.c \
+			  ftex_uitoa_base.c \
 			  ftex_str_replace.c \
-			  ftex_uitoa_base.c
+			  ftex_minprintf.c
 
 BONUSFILES		= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
 			  ft_lstlast.c ft_lstlast.c ft_lstadd_back.c \
@@ -74,7 +75,7 @@ SRCDIR		= src
 BONUSDIR	= bonus
 OBJDIR		= obj
 NAME		= libft.a
-HEADER		= $(SRCDIR)/libft.h
+HEADER		= libft.h
 
 SOURCE		= $(addprefix $(SRCDIR)/, $(SRCFILES))
 BONUSSOURCE = $(addprefix $(BONUSDIR)/, $(BONUSFILES))
@@ -83,17 +84,17 @@ OBJBONUS	= $(BONUSSOURCE:$(BONUSDIR)/%.c=$(OBJDIR)/%.o)
 
 all:			mkdir $(NAME)
 
-bonus:			$(NAME) $(OBJBONUS) ./inc/libft.h
+bonus:			$(NAME) $(OBJBONUS) $(HEADER)
 			$(AR) $(ARFLAGS) $(NAME) $(OBJBONUS)
 
-$(NAME):		$(OBJ) ./inc/libft.h
+$(NAME):		$(OBJ) $(HEADER)
 			$(AR) $(ARFLAGS) $(NAME) $(OBJ)
 
-$(OBJDIR)/%.o:	$(SRCDIR)/%.c ./inc/libft.h
-			$(CC) $(CFLAGS) -c $< -o $@ -I./inc
+$(OBJDIR)/%.o:	$(SRCDIR)/%.c $(HEADER)
+			$(CC) $(CFLAGS) -c $< -o $@ -I./
 
-$(OBJDIR)/%.o:	$(BONUSDIR)/%.c ./inc/libft.h
-			$(CC) $(CFLAGS) -c $< -o $@ -I./inc
+$(OBJDIR)/%.o:	$(BONUSDIR)/%.c $(HEADER)
+			$(CC) $(CFLAGS) -c $< -o $@ -I./
 
 so:
 			$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)

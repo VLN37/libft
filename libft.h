@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 20:34:20 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/10/21 11:58:46 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/10/22 11:58:35 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,15 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
+
+typedef struct s_pf
+{
+	int		len;
+	int		width;
+	int		minus;
+	int		offset;
+	char	*ret;
+}	t_pf;
 
 typedef struct s_list
 {
@@ -75,8 +84,8 @@ char		*ftex_str_replace(char *str, char *old, char *new);
 char		*ftex_str_replace_all(char *str, char *old, char *new);
 char		*ftex_uitoa(unsigned int nbr);
 long long	ftex_atoll(const char *str);
-char		*ftex_uitoa_base(unsigned long nbr, char *base_to, unsigned long \
-basesize);
+char		*ftex_uitoa_base(size_t nbr, char *base_to, size_t basesize);
 char		*ftex_strmerge(char *old, char *append);
+void		ftex_minprintf(const char *s, ...);
 
 #endif
