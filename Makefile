@@ -81,7 +81,7 @@ BONUSSOURCE = $(addprefix $(BONUSDIR)/, $(BONUSFILES))
 OBJ			= $(SOURCE:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
 OBJBONUS	= $(BONUSSOURCE:$(BONUSDIR)/%.c=$(OBJDIR)/%.o)
 
-all:			$(NAME)
+all:			mkdir $(NAME)
 
 bonus:			$(NAME) $(OBJBONUS) ./inc/libft.h
 			$(AR) $(ARFLAGS) $(NAME) $(OBJBONUS)
@@ -101,9 +101,13 @@ so:
 
 clean:
 			$(RM) $(OBJ) $(OBJBONUS)
+			rm -rf obj
 
 fclean:		clean
 			$(RM) $(NAME)
+
+mkdir:
+			mkdir -p obj
 
 re:			fclean all
 

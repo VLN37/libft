@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:05:07 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/10/05 14:05:05 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/10/22 02:49:38 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -488,8 +488,6 @@ int	main(void)
 	split2 = ft_split("  let's split this for   glory !     ", ' ');
 	split3 = ft_split( "1-2-3-4-5-6-7-8--8-8--8-4------4--4", '-');
 	i = -1;
-	while (split3[++i])
-		printf("%s\n", split3[i]);
 	if (splitsupport(split2))
 		printf("[KO] split array is not as expected\n");
 	else
