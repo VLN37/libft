@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 08:22:04 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/10/22 13:53:59 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/10/23 10:00:26 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	call_conversion(t_pf *data, va_list args, char type)
 	free(str);
 }
 
-void	ftex_printf(const char *s, ...)
+void	ftex_minprintf(const char *s, ...)
 {
 	va_list	args;
 	t_pf	data;
