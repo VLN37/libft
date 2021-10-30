@@ -57,7 +57,8 @@ SRCFILES	= get_next_line.c \
 			  ftex_atoll.c \
 			  ftex_uitoa_base.c \
 			  ftex_str_replace.c \
-			  ftex_minprintf.c
+			  ftex_minprintf.c \
+			  ftex_null_ptr.c
 
 BONUSFILES		= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
 			  ft_lstlast.c ft_lstlast.c ft_lstadd_back.c \
