@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 08:22:04 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/10/30 00:59:30 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/10/30 01:07:08 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	call_conversion(t_pf *data, va_list args, char type)
 	if (type == 'p')
 	{
 		str = ftex_uitoa_base((size_t)va_arg(args, void *), HEXBASE, 16);
-		str = ftex_strmerge("0x", str);
+		str = ftex_strmerge(ft_strdup("0x"), str);
 	}
 	if (type == 'd')
 		str = ft_itoa(va_arg(args, int));
