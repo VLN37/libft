@@ -4,3 +4,5 @@ libft_old/
 libftTester/
 unit/
 warmachine/
+libft.a
+obj
