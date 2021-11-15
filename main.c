@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:05:07 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/10/22 02:49:38 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/11/14 21:17:38 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -720,4 +720,20 @@ int	main(void)
 	printf("%s\n", str);
 
 	free(str);
-	}
+
+	//ftex_strerase
+	char *erase1 = ftex_strerase("hello123123", "1234567890");
+	char *erase2 = ftex_strerase("120hey12hey", "1234567890");
+	char *erase3 = ftex_strerase("1hello1", "1234567890");
+	char *erase4 = ftex_strerase("hey123hey", "1234567890");
+	if (ft_strncmp(erase1, "hello", 15))
+		printf("[KO] test 1\n");
+	if (ft_strncmp(erase2, "heyhey", 15))
+		printf("[KO] test 2\n");
+	if (ft_strncmp(erase3, "hello", 15))
+		printf("[KO] test 3\n");
+	if (ft_strncmp(erase4, "heyhey", 15))
+		printf("[KO] test 4\n");
+	else
+		printf("[OK] ftex_strerase\n");
+}

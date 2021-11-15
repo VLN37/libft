@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 20:34:20 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/11/09 15:01:08 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/11/14 21:10:57 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,6 @@ char		*ftex_uitoa_base(size_t nbr, char *base_to, size_t basesize);
 char		*ftex_strmerge(char *old, char *append);
 void		ftex_minprintf(const char *s, ...);
 void		ftex_null_ptr(void **ptr);
+char		*ftex_strerase(char *str, char *set);
 
 #endif
