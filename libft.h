@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 20:34:20 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/11/14 21:10:57 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/11/27 09:14:04 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,13 @@ typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
-}t_list;
+}	t_list;
+
+typedef enum t_bool
+{
+	false,
+	true
+}	t_bool;
 
 void		*ft_memset(void *str, int c, size_t len);
 void		*ft_calloc(size_t nbr, size_t size);
@@ -90,5 +96,6 @@ char		*ftex_strmerge(char *old, char *append);
 void		ftex_minprintf(const char *s, ...);
 void		ftex_null_ptr(void **ptr);
 char		*ftex_strerase(char *str, char *set);
+void		ftex_tr(char *str, char *del, char *replace);
 
 #endif

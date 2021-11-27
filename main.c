@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:05:07 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/11/14 21:17:38 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/11/27 09:12:04 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -736,4 +736,18 @@ int	main(void)
 		printf("[KO] test 4\n");
 	else
 		printf("[OK] ftex_strerase\n");
+
+	//ftex_tr
+	char *tr1 = ft_strdup("abc");
+	char *tr2 = ft_strdup("abc");
+	char *tr3 = NULL;
+
+	ftex_tr(tr1, "abc", "cba");
+	ftex_tr(tr2, "ab", "cba");
+	if (ft_strncmp(tr1, "cba", 5))
+		printf("[KO] test 1\n");
+	else if (ft_strncmp(tr2, "cbc", 5))
+		printf("[KO] test2\n");
+	else
+		printf("[OK] ftex_tr\n");
 }
