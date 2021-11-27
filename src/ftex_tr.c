@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 08:14:33 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/11/27 09:21:39 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/11/27 09:27:28 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ void	ftex_tr(char *str, char *del, char *new)
 
 	if (!str || !del | !new)
 		return ;
-	tmp = (char *)malloc(sizeof(char) * (ft_strlen(str) + 1));
 	i = -1;
 	while (str[++i])
 	{
