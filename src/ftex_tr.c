@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 08:14:33 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/11/27 09:13:46 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/11/27 09:21:39 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,13 @@ int	is_in_del(char c, char *del)
 	return (-1);
 }
 
-char	find_new(char c, char *new, int index)
+char	find_new(char *new, int index)
 {
-	if ((size_t)index > ft_strlen(new) - 1)
-		return (c);
+	int	len;
+
+	len = ft_strlen(new);
+	if (index > len - 1)
+		return (new[len - 1]);
 	else
 		return (new[index]);
 }
@@ -44,19 +47,17 @@ void	ftex_tr(char *str, char *del, char *new)
 {
 	int		index;
 	char	*tmp;
+	int		i;
 
 	if (!str || !del | !new)
 		return ;
 	tmp = (char *)malloc(sizeof(char) * (ft_strlen(str) + 1));
-	while (*str)
+	i = -1;
+	while (str[++i])
 	{
-		index = is_in_del(*str, del);
+		index = is_in_del(str[i], del);
 		if (index == -1)
-			str++;
-		else
-		{
-			*str = find_new(*str, new, index);
-			str++;
-		}
+			continue ;
+		str[i] = find_new(new, index);
 	}
 }
