@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 08:14:33 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/11/27 09:27:28 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/11/27 09:28:41 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ char	find_new(char *new, int index)
 void	ftex_tr(char *str, char *del, char *new)
 {
 	int		index;
-	char	*tmp;
 	int		i;
 
 	if (!str || !del | !new)
