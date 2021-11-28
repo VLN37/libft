@@ -6,13 +6,13 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 08:14:33 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/11/27 09:28:41 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/11/28 08:10:31 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	is_in_del(char c, char *del)
+static int	is_in_del(char c, char *del)
 {
 	int	i;
 
@@ -25,7 +25,7 @@ int	is_in_del(char c, char *del)
 	return (-1);
 }
 
-char	find_new(char *new, int index)
+static char	find_new(char *new, int index)
 {
 	int	len;
 
@@ -48,7 +48,7 @@ void	ftex_tr(char *str, char *del, char *new)
 	int		index;
 	int		i;
 
-	if (!str || !del | !new)
+	if (!str || !del || !new)
 		return ;
 	i = -1;
 	while (str[++i])
