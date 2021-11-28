@@ -85,7 +85,7 @@ BONUSSOURCE = $(addprefix $(BONUSDIR)/, $(BONUSFILES))
 OBJ			= $(SOURCE:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
 OBJBONUS	= $(BONUSSOURCE:$(BONUSDIR)/%.c=$(OBJDIR)/%.o)
 
-all:			mkdir $(NAME)
+all:			$(OBJDIR) $(NAME)
 
 bonus:			$(NAME) $(OBJBONUS) $(HEADER)
 			$(AR) $(ARFLAGS) $(NAME) $(OBJBONUS)
@@ -110,7 +110,7 @@ clean:
 fclean:		clean
 			$(RM) $(NAME)
 
-mkdir:
+$(OBJDIR):
 			mkdir -p obj
 
 re:			fclean all
