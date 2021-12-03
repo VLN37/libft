@@ -18,12 +18,6 @@ static void	unsigned_setvariables(unsigned int nbr, int *sign, int *size_str)
 
 	*size_str = 0;
 	i = 0;
-	if (nbr < 0)
-	{
-		i++;
-		*sign *= -1;
-		nbr *= -1;
-	}
 	if (nbr == 0)
 		*size_str += 1;
 	while (nbr != 0)

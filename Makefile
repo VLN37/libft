@@ -68,7 +68,7 @@ BONUSFILES		= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
 			  ft_lstmap.c \
 
 
-CC			= clang
+CC			= gcc
 AR			= ar
 ARFLAGS		= rcs
 RM			= rm -f
