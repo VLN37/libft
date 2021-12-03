@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static void	unsigned_setvariables(unsigned int nbr, int *sign, int *size_str)
+static void	unsigned_setvariables(unsigned int nbr, int *size_str)
 {
 	int	i;
 
@@ -28,7 +28,7 @@ static void	unsigned_setvariables(unsigned int nbr, int *sign, int *size_str)
 	*size_str = *size_str + i;
 }
 
-static void	unsigned_putnbr(unsigned int nbr, char *res, int *sign)
+static void	unsigned_putnbr(unsigned int nbr, char *res)
 {
 	int	i;
 
@@ -41,8 +41,6 @@ static void	unsigned_putnbr(unsigned int nbr, char *res, int *sign)
 		i++;
 		nbr = nbr / 10;
 	}
-	if (*sign == -1)
-		res[i++] = '-';
 	res[i] = '\0';
 }
 
@@ -66,15 +64,13 @@ static void	unsigned_reverse_string(char *tab)
 char	*ftex_uitoa(unsigned int nbr)
 {
 	int		size_str;
-	int		sign;
 	char	*res;
 
-	sign = 1;
-	unsigned_setvariables(nbr, &sign, &size_str);
+	unsigned_setvariables(nbr, &size_str);
 	res = (char *)malloc(size_str + 1 * sizeof(char));
 	if (!res)
 		return (NULL);
-	unsigned_putnbr(nbr, res, &sign);
+	unsigned_putnbr(nbr, res);
 	unsigned_reverse_string(res);
 	return (res);
 }

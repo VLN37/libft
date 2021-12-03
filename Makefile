@@ -61,14 +61,18 @@ SRCFILES	= get_next_line.c \
 			  ftex_null_ptr.c \
 			  ftex_strerase.c \
 			  ftex_tr.c \
-
-BONUSFILES		= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
-			  ft_lstlast.c ft_lstlast.c ft_lstadd_back.c \
-			  ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
+			  ft_lstnew.c \
+			  ft_lstadd_front.c \
+			  ft_lstsize.c \
+			  ft_lstlast.c \
+			  ft_lstadd_back.c \
+			  ft_lstdelone.c \
+			  ft_lstclear.c \
+			  ft_lstiter.c \
 			  ft_lstmap.c \
 
 
-CC			= gcc
+CC			= clang
 AR			= ar
 ARFLAGS		= rcs
 RM			= rm -f
@@ -87,8 +91,8 @@ OBJBONUS	= $(BONUSSOURCE:$(BONUSDIR)/%.c=$(OBJDIR)/%.o)
 
 all:			$(OBJDIR) $(NAME)
 
-bonus:			$(NAME) $(OBJBONUS) $(HEADER)
-			$(AR) $(ARFLAGS) $(NAME) $(OBJBONUS)
+# bonus:			$(NAME) $(OBJBONUS) $(HEADER)
+# 			$(AR) $(ARFLAGS) $(NAME) $(OBJBONUS)
 
 $(NAME):		$(OBJ) $(HEADER)
 			$(AR) $(ARFLAGS) $(NAME) $(OBJ)
@@ -96,8 +100,8 @@ $(NAME):		$(OBJ) $(HEADER)
 $(OBJDIR)/%.o:	$(SRCDIR)/%.c $(HEADER)
 			$(CC) $(CFLAGS) -c $< -o $@ -I./
 
-$(OBJDIR)/%.o:	$(BONUSDIR)/%.c $(HEADER)
-			$(CC) $(CFLAGS) -c $< -o $@ -I./
+# $(OBJDIR)/%.o:	$(BONUSDIR)/%.c $(HEADER)
+# 			$(CC) $(CFLAGS) -c $< -o $@ -I./
 
 so:
 			$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
