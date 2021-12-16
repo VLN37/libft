@@ -72,7 +72,7 @@ SRCFILES	= get_next_line.c \
 			  ft_lstmap.c \
 
 
-CC			= gcc
+CC			= gcc -g3
 AR			= ar
 ARFLAGS		= rcs
 RM			= rm -f
