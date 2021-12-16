@@ -61,6 +61,7 @@ SRCFILES	= get_next_line.c \
 			  ftex_null_ptr.c \
 			  ftex_strerase.c \
 			  ftex_tr.c \
+			  ftex_is_in_set.c \
 			  ft_lstnew.c \
 			  ft_lstadd_front.c \
 			  ft_lstsize.c \

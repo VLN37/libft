@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 20:34:20 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/11/27 09:14:04 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/12/16 02:34:11 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,5 +97,7 @@ void		ftex_minprintf(const char *s, ...);
 void		ftex_null_ptr(void **ptr);
 char		*ftex_strerase(char *str, char *set);
 void		ftex_tr(char *str, char *del, char *replace);
+t_bool		ftex_isspace(char c);
+t_bool		ftex_is_in_set(char c, char *set);
 
 #endif
