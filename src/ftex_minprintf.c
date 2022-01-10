@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 08:22:04 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/10/30 01:07:08 by jofelipe         ###   ########.fr       */
+/*   Updated: 2022/01/10 15:51:17 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,11 @@ char	*apply_width(char *str, int len, int minus)
 	if (minus)
 	{
 		str = ftex_strmerge(str, spaces);
-		free(spaces);
 		return (str);
 	}
 	else
 	{
 		spaces = ftex_strmerge(spaces, str);
-		free(str);
 		return (spaces);
 	}
 }
