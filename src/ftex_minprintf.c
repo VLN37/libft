@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 08:22:04 by jofelipe          #+#    #+#             */
-/*   Updated: 2022/01/10 15:51:17 by jofelipe         ###   ########.fr       */
+/*   Updated: 2022/01/12 18:33:24 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,12 @@ void	call_conversion(t_pf *data, va_list args, char type)
 	}
 	if (type == 'd')
 		str = ft_itoa(va_arg(args, int));
+	if (type == 'c')
+	{
+		str = malloc(sizeof(2));
+		str[0] = va_arg(args, int);
+		str[1] = '\0';
+	}
 	data->len = ft_strlen(str);
 	if (data->width - data->len > 0)
 		str = apply_width(str, data->width - data->len, data->minus);
