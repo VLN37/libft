@@ -62,18 +62,9 @@ SRCFILES	= get_next_line.c \
 			  ftex_strerase.c \
 			  ftex_tr.c \
 			  ftex_is_in_set.c \
-			  ft_lstnew.c \
-			  ft_lstadd_front.c \
-			  ft_lstsize.c \
-			  ft_lstlast.c \
-			  ft_lstadd_back.c \
-			  ft_lstdelone.c \
-			  ft_lstclear.c \
-			  ft_lstiter.c \
-			  ft_lstmap.c \
 
 
-CC			= gcc -g3
+CC			= gcc -g3 -o3
 AR			= ar
 ARFLAGS		= rcs
 RM			= rm -f
@@ -95,7 +86,7 @@ all:			$(OBJDIR) $(NAME)
 # bonus:			$(NAME) $(OBJBONUS) $(HEADER)
 # 			$(AR) $(ARFLAGS) $(NAME) $(OBJBONUS)
 
-$(NAME):		$(OBJ) $(HEADER)
+$(NAME):	$(OBJ) $(HEADER)
 			$(AR) $(ARFLAGS) $(NAME) $(OBJ)
 
 $(OBJDIR)/%.o:	$(SRCDIR)/%.c $(HEADER)
@@ -104,16 +95,17 @@ $(OBJDIR)/%.o:	$(SRCDIR)/%.c $(HEADER)
 # $(OBJDIR)/%.o:	$(BONUSDIR)/%.c $(HEADER)
 # 			$(CC) $(CFLAGS) -c $< -o $@ -I./
 
-so:
-			$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
-			gcc -nostartfiles -shared -o libft.so $(OBJ)
+so:			$(OBJDIR) $(OBJ)
+			$(CC) -nostartfiles -fPIC $(CFLAGS) $(SOURCE) -I./
+			$(CC) -nostartfiles -shared -o libft.so $(OBJ)
+
 
 clean:
 			$(RM) $(OBJ) $(OBJBONUS)
 			rm -rf obj
 
 fclean:		clean
-			$(RM) $(NAME)
+			$(RM) $(NAME) libft.so
 
 $(OBJDIR):
 			mkdir -p obj
