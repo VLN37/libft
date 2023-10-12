@@ -1,7 +1,7 @@
 *.out
 depuration
 libft_old/
-libftTester/
+tripoulle/
 unit/
 warmachine/
 libft.a

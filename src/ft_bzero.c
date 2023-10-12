@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 10:05:30 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/05 17:23:53 by jofelipe         ###   ########.fr       */
+/*   Updated: 2023/10/11 23:31:17 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,20 @@
  */
 void	ft_bzero(void *ptr, size_t len)
 {
-	while (len-- > 0)
-		*(char *)ptr++ = 0;
+	uint64_t	*ptr64;
+	char		*ptr4;
+
+	ptr64 = (uint64_t *)ptr;
+	while (len >= 8)
+	{
+		*ptr64 = 0;
+		len -= 8;
+		++ptr64;
+	}
+	ptr4 = (char *)ptr64;
+	while (len--)
+	{
+		*ptr4 = 0;
+		++ptr4;
+	}
 }

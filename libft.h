@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 20:34:20 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/12/16 02:34:11 by jofelipe         ###   ########.fr       */
+/*   Updated: 2023/10/11 23:30:12 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 # define LIBFT_H
 
 # include <unistd.h>
+# include <stdint.h>
 # include <stdlib.h>
+# include <errno.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
