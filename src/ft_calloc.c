@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 10:06:02 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/24 01:30:43 by jofelipe         ###   ########.fr       */
+/*   Updated: 2023/10/11 23:10:09 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ void	*ft_calloc(size_t nbr, size_t size)
 {
 	void	*ptr;
 
+	// overflow
+	if (size && nbr > (size_t)-1 / size) {
+		errno = ENOMEM;
+		return (NULL);
+	}
 	ptr = malloc(nbr * size);
 	if (ptr == NULL)
 		return (NULL);
