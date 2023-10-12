@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:05:07 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/11/27 09:12:04 by jofelipe         ###   ########.fr       */
+/*   Updated: 2023/10/12 12:29:46 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -701,31 +701,31 @@ int	main(void)
 	printf("-------- aditional functions----------");
 
 
-	//ftex_str_replace_all
+	//ft_str_replace_all
 	char *newpat = "0x99";
 	char *oldpat = " ' '";
 	char *str = "'hello' 'guys' ' ' ' ' ' 'i am robot'";
 	str = ft_strdup(str);
 	// while(ft_strnstr(str, " ' '", ft_strlen(str)))
-	// 	str = ftex_str_replace(str, oldpat, newpat);
+	// 	str = ft_str_replace(str, oldpat, newpat);
 	// printf("%s\n", str);
 	// while(ft_strnstr(str, "0x99", ft_strlen(str)))
-	// 	str = ftex_str_replace(str, newpat, oldpat);
+	// 	str = ft_str_replace(str, newpat, oldpat);
 
 	free (str);
 	str = ft_strdup("");
-	str = ftex_str_replace_all(str, oldpat, newpat);
+	str = ft_str_replace_all(str, oldpat, newpat);
 	printf("%s\n", str);
-	str = ftex_str_replace_all(str, newpat, oldpat);
+	str = ft_str_replace_all(str, newpat, oldpat);
 	printf("%s\n", str);
 
 	free(str);
 
-	//ftex_strerase
-	char *erase1 = ftex_strerase("hello123123", "1234567890");
-	char *erase2 = ftex_strerase("120hey12hey", "1234567890");
-	char *erase3 = ftex_strerase("1hello1", "1234567890");
-	char *erase4 = ftex_strerase("hey123hey", "1234567890");
+	//ft_strerase
+	char *erase1 = ft_strerase("hello123123", "1234567890");
+	char *erase2 = ft_strerase("120hey12hey", "1234567890");
+	char *erase3 = ft_strerase("1hello1", "1234567890");
+	char *erase4 = ft_strerase("hey123hey", "1234567890");
 	if (ft_strncmp(erase1, "hello", 15))
 		printf("[KO] test 1\n");
 	if (ft_strncmp(erase2, "heyhey", 15))
@@ -735,19 +735,19 @@ int	main(void)
 	if (ft_strncmp(erase4, "heyhey", 15))
 		printf("[KO] test 4\n");
 	else
-		printf("[OK] ftex_strerase\n");
+		printf("[OK] ft_strerase\n");
 
-	//ftex_tr
+	//ft_tr
 	char *tr1 = ft_strdup("abc");
 	char *tr2 = ft_strdup("abc");
 	char *tr3 = NULL;
 
-	ftex_tr(tr1, "abc", "cba");
-	ftex_tr(tr2, "ab", "cba");
+	ft_tr(tr1, "abc", "cba");
+	ft_tr(tr2, "ab", "cba");
 	if (ft_strncmp(tr1, "cba", 5))
 		printf("[KO] test 1\n");
 	else if (ft_strncmp(tr2, "cbc", 5))
 		printf("[KO] test2\n");
 	else
-		printf("[OK] ftex_tr\n");
+		printf("[OK] ft_tr\n");
 }

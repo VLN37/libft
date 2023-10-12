@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 20:34:20 by jofelipe          #+#    #+#             */
-/*   Updated: 2023/10/12 01:01:17 by jofelipe         ###   ########.fr       */
+/*   Updated: 2023/10/12 12:31:06 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,17 +91,17 @@ void		ft_lstdelone(t_list *lst, void (*del)(void *));
 void		ft_lstclear(t_list **lst, void (*del)(void*));
 void		ft_lstiter(t_list *lst, void (*f)(void *));
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-char		*ftex_str_replace(char *str, char *old, char *new);
-char		*ftex_str_replace_all(char *str, char *old, char *new);
-char		*ftex_uitoa(unsigned int nbr);
-long long	ftex_atoll(const char *str);
-char		*ftex_uitoa_base(size_t nbr, char *base_to, size_t basesize);
-char		*ftex_strmerge(char *old, char *append);
-void		ftex_minprintf(const char *s, ...);
-void		ftex_null_ptr(void **ptr);
-char		*ftex_strerase(char *str, char *set);
-void		ftex_tr(char *str, char *del, char *replace);
-bool		ftex_isspace(char c);
-bool		ftex_is_in_set(char c, char *set);
+char		*ft_str_replace(char *str, char *old, char *new);
+char		*ft_str_replace_all(char *str, char *old, char *new);
+char		*ft_uitoa(unsigned int nbr);
+long long	ft_atoll(const char *str);
+char		*ft_uitoa_base(size_t nbr, char *base_to, size_t basesize);
+char		*ft_strmerge(char *old, char *append);
+void		ft_minprintf(const char *s, ...);
+void		ft_null_ptr(void **ptr);
+char		*ft_strerase(char *str, char *set);
+void		ft_tr(char *str, char *del, char *replace);
+bool		ft_isspace(char c);
+bool		ft_is_in_set(char c, char *set);
 
 #endif

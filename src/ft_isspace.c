@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ftex_null_ptr.c                                    :+:      :+:    :+:   */
+/*   ft_isspace.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/30 01:32:45 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/10/30 01:35:27 by jofelipe         ###   ########.fr       */
+/*   Created: 2021/12/16 02:34:37 by jofelipe          #+#    #+#             */
+/*   Updated: 2023/10/12 00:56:10 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ftex_null_ptr(void **ptr)
+bool	ft_isspace(char c)
 {
-	free(*ptr);
-	*ptr = NULL;
+	return (c == ' ' || c == '\t'
+		|| c == '\n' || c == '\f'
+		|| c == '\r' || c == '\v');
 }

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ftex_uitoa_base.c                                  :+:      :+:    :+:   */
+/*   ft_uitoa_base.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -44,7 +44,7 @@ static int	count_numbers(unsigned long nbr, int basesize)
 	return (i);
 }
 
-char	*ftex_uitoa_base(
+char	*ft_uitoa_base(
 	unsigned long nbr, char *base_to, unsigned long basesize)
 
 {

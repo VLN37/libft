@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ftex_is_in_set.c                                   :+:      :+:    :+:   */
+/*   ft_is_in_set.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-bool	ftex_is_in_set(char c, char *set)
+bool	ft_is_in_set(char c, char *set)
 {
 	if (!set)
 		return (false);

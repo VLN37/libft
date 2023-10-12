@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ftex_atoll.c                                       :+:      :+:    :+:   */
+/*   ft_atoll.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -33,7 +33,7 @@ static int	validation(const char *str, int *ptrsign, int *ptri)
 	return (true);
 }
 
-long long	ftex_atoll(const char *str)
+long long	ft_atoll(const char *str)
 {
 	int			i;
 	int			sign;

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ftex_minprintf.c                                   :+:      :+:    :+:   */
+/*   ft_minprintf.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 08:22:04 by jofelipe          #+#    #+#             */
-/*   Updated: 2022/01/12 18:33:24 by jofelipe         ###   ########.fr       */
+/*   Updated: 2023/10/12 12:29:37 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ char	*apply_width(char *str, int len, int minus)
 		spaces[len] = ' ';
 	if (minus)
 	{
-		str = ftex_strmerge(str, spaces);
+		str = ft_strmerge(str, spaces);
 		return (str);
 	}
 	else
 	{
-		spaces = ftex_strmerge(spaces, str);
+		spaces = ft_strmerge(spaces, str);
 		return (spaces);
 	}
 }
@@ -71,8 +71,8 @@ void	call_conversion(t_pf *data, va_list args, char type)
 		str = ft_strdup(va_arg(args, char *));
 	if (type == 'p')
 	{
-		str = ftex_uitoa_base((size_t)va_arg(args, void *), HEXBASE, 16);
-		str = ftex_strmerge(ft_strdup("0x"), str);
+		str = ft_uitoa_base((size_t)va_arg(args, void *), HEXBASE, 16);
+		str = ft_strmerge(ft_strdup("0x"), str);
 	}
 	if (type == 'd')
 		str = ft_itoa(va_arg(args, int));
@@ -89,7 +89,7 @@ void	call_conversion(t_pf *data, va_list args, char type)
 	free(str);
 }
 
-void	ftex_minprintf(const char *s, ...)
+void	ft_minprintf(const char *s, ...)
 {
 	va_list	args;
 	t_pf	data;

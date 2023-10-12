@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ftex_strerase.c                                    :+:      :+:    :+:   */
+/*   ft_strerase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -44,7 +44,7 @@ static int	strsize(char *str, char *set)
  * @param set the set of characters to remove
  * @return char* the freshly allocated string, the previous string must be freed
  */
-char	*ftex_strerase(char *str, char *set)
+char	*ft_strerase(char *str, char *set)
 {
 	size_t	size;
 	char	*res;

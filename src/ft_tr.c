@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ftex_tr.c                                          :+:      :+:    :+:   */
+/*   ft_tr.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -43,7 +43,7 @@ static char	find_new(char *new, int index)
  * @param del
  * @param replace
  */
-void	ftex_tr(char *str, char *del, char *new)
+void	ft_tr(char *str, char *del, char *new)
 {
 	int		index;
 	int		i;

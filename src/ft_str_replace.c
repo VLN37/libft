@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ftex_str_replace.c                                 :+:      :+:    :+:   */
+/*   ft_str_replace.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -26,7 +26,7 @@ char	*release(char *str)
  * @param new the new pattern
  * @return char* the new freshly allocated string
  */
-char	*ftex_str_replace(char *str, char *old, char *new)
+char	*ft_str_replace(char *str, char *old, char *new)
 {
 	char	*new_str;
 	char	*ptr;

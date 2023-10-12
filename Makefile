@@ -51,17 +51,17 @@ SRCFILES	= get_next_line.c \
 			  ft_lstadd_back.c \
 			  ft_lstclear.c \
 			  ft_lstadd_front.c \
-			  ftex_uitoa.c \
-			  ftex_str_replace_all.c \
-			  ftex_strmerge.c \
-			  ftex_atoll.c \
-			  ftex_uitoa_base.c \
-			  ftex_str_replace.c \
-			  ftex_minprintf.c \
-			  ftex_null_ptr.c \
-			  ftex_strerase.c \
-			  ftex_tr.c \
-			  ftex_is_in_set.c \
+			  ft_uitoa.c \
+			  ft_str_replace_all.c \
+			  ft_strmerge.c \
+			  ft_atoll.c \
+			  ft_uitoa_base.c \
+			  ft_str_replace.c \
+			  ft_minprintf.c \
+			  ft_null_ptr.c \
+			  ft_strerase.c \
+			  ft_tr.c \
+			  ft_is_in_set.c \
 
 
 CC			= gcc -g3 -o3
@@ -83,17 +83,12 @@ OBJBONUS	= $(BONUSSOURCE:$(BONUSDIR)/%.c=$(OBJDIR)/%.o)
 
 all:			$(OBJDIR) $(NAME)
 
-# bonus:			$(NAME) $(OBJBONUS) $(HEADER)
-# 			$(AR) $(ARFLAGS) $(NAME) $(OBJBONUS)
-
 $(NAME):	$(OBJ) $(HEADER)
 			$(AR) $(ARFLAGS) $(NAME) $(OBJ)
 
 $(OBJDIR)/%.o:	$(SRCDIR)/%.c $(HEADER)
 			$(CC) $(CFLAGS) -c $< -o $@ -I./
 
-# $(OBJDIR)/%.o:	$(BONUSDIR)/%.c $(HEADER)
-# 			$(CC) $(CFLAGS) -c $< -o $@ -I./
 
 so:			$(OBJDIR) $(OBJ)
 			$(CC) -nostartfiles -fPIC $(CFLAGS) $(SOURCE) -I./

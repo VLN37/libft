@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ftex_isspace.c                                     :+:      :+:    :+:   */
+/*   ft_strmerge.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/16 02:34:37 by jofelipe          #+#    #+#             */
-/*   Updated: 2023/10/12 00:56:10 by jofelipe         ###   ########.fr       */
+/*   Created: 2021/10/21 07:44:57 by jofelipe          #+#    #+#             */
+/*   Updated: 2021/10/22 11:57:34 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-bool	ftex_isspace(char c)
+char	*ft_strmerge(char *old, char *append)
 {
-	return (c == ' ' || c == '\t'
-		|| c == '\n' || c == '\f'
-		|| c == '\r' || c == '\v');
+	char	*new;
+
+	if (!old)
+		old = ft_strdup("");
+	new = ft_strjoin(old, append);
+	free(old);
+	free(append);
+	return (new);
 }
