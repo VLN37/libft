@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 01:33:39 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/05 01:33:39 by jofelipe         ###   ########.fr       */
+/*   Updated: 2023/10/12 01:01:55 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	char	p;
 
-	if (n == -2147483648)
+	if (n == INT_MIN)
 	{
 		write(fd, "-2147483648", 11);
 		return ;

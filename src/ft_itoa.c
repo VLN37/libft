@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 01:33:12 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/08 01:29:23 by jofelipe         ###   ########.fr       */
+/*   Updated: 2023/10/12 01:01:11 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static void	putnbr(int nbr, char *res, int *sign)
 	int	i;
 
 	i = 0;
-	if (nbr == -2147483648)
+	if (nbr == INT_MIN)
 	{
 		res[i++] = '8';
 		nbr = nbr / 10;
