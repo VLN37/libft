@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 10:07:47 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/02 12:17:38 by jofelipe         ###   ########.fr       */
+/*   Updated: 2023/10/12 00:53:31 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@
 int	ft_isalnum(int c)
 {
 	if ((!ft_isalpha(c)) && (!ft_isdigit(c)))
-		return (0);
-	return (1);
+		return (false);
+	return (true);
 }

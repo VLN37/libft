@@ -6,21 +6,21 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 02:32:58 by jofelipe          #+#    #+#             */
-/*   Updated: 2023/10/11 22:13:28 by jofelipe         ###   ########.fr       */
+/*   Updated: 2023/10/12 00:56:00 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_bool	ftex_is_in_set(char c, char *set)
+bool	ftex_is_in_set(char c, char *set)
 {
 	if (!set)
-		return (0);
+		return (false);
 	while (*set)
 	{
 		if (c == *set)
-			return (1);
+			return (true);
 		set++;
 	}
-	return (0);
+	return (false);
 }

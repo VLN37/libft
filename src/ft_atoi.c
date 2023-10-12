@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 03:05:05 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/02 15:25:35 by jofelipe         ###   ########.fr       */
+/*   Updated: 2023/10/12 00:53:42 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ static int	validation(const char *str, int *ptrsign, int *ptri)
 	}
 	*ptri = i;
 	if (str[i] < '0' || str[i] > '9')
-		return (0);
-	return (1);
+		return (false);
+	return (true);
 }
 
 //receives a string and returns it as an int, if valid
@@ -44,7 +44,7 @@ int	ft_atoi(const char *str)
 	sign = 1;
 	result = 0;
 	if (!validation(str, &sign, &i))
-		return (0);
+		return (false);
 	while (str[i] != '\0')
 	{
 		if (str[i] < '0' || str[i] > '9')

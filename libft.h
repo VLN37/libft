@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 20:34:20 by jofelipe          #+#    #+#             */
-/*   Updated: 2023/10/11 23:30:12 by jofelipe         ###   ########.fr       */
+/*   Updated: 2023/10/12 00:58:21 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdint.h>
 # include <stdlib.h>
 # include <errno.h>
+# include <stdbool.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
@@ -40,8 +41,8 @@ typedef struct s_list
 
 typedef enum t_bool
 {
-	false,
-	true
+	FALSE,
+	TRUE
 }	t_bool;
 
 void		*ft_memset(void *str, int c, size_t len);
@@ -99,7 +100,7 @@ void		ftex_minprintf(const char *s, ...);
 void		ftex_null_ptr(void **ptr);
 char		*ftex_strerase(char *str, char *set);
 void		ftex_tr(char *str, char *del, char *replace);
-t_bool		ftex_isspace(char c);
-t_bool		ftex_is_in_set(char c, char *set);
+bool		ftex_isspace(char c);
+bool		ftex_is_in_set(char c, char *set);
 
 #endif

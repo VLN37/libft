@@ -6,13 +6,13 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 02:34:37 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/12/16 02:39:14 by jofelipe         ###   ########.fr       */
+/*   Updated: 2023/10/12 00:56:10 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_bool	ftex_isspace(char c)
+bool	ftex_isspace(char c)
 {
 	return (c == ' ' || c == '\t'
 		|| c == '\n' || c == '\f'

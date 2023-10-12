@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/05 19:17:25 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/10/05 19:31:07 by jofelipe         ###   ########.fr       */
+/*   Updated: 2023/10/12 00:54:57 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ static int	validation(const char *str, int *ptrsign, int *ptri)
 	}
 	*ptri = i;
 	if (str[i] < '0' || str[i] > '9')
-		return (0);
-	return (1);
+		return (false);
+	return (true);
 }
 
 long long	ftex_atoll(const char *str)

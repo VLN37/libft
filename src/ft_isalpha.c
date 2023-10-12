@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 10:09:06 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/02 12:17:58 by jofelipe         ###   ########.fr       */
+/*   Updated: 2023/10/12 00:53:47 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@
 int	ft_isalpha(int c)
 {
 	if ((c < 'A' || c > 'Z') && (c < 'a' || c > 'z'))
-		return (0);
-	return (1);
+		return (false);
+	return (true);
 }

@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 10:09:16 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/02 12:18:06 by jofelipe         ###   ########.fr       */
+/*   Updated: 2023/10/12 00:54:16 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@
 int	ft_isascii(int c)
 {
 	if (c < 0 || c > 127)
-		return (0);
-	return (1);
+		return (false);
+	return (true);
 }

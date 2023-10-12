@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 20:52:21 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/11/14 21:18:15 by jofelipe         ###   ########.fr       */
+/*   Updated: 2023/10/12 00:55:09 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ static int	istrimmed(char c, char const *set)
 	while (*set)
 	{
 		if (c == *set)
-			return (1);
+			return (true);
 		set++;
 	}
-	return (0);
+	return (false);
 }
 
 static int	strsize(char *str, char *set)
