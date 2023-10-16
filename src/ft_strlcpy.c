@@ -6,11 +6,12 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 11:26:42 by jofelipe          #+#    #+#             */
-/*   Updated: 2023/10/12 00:46:19 by jofelipe         ###   ########.fr       */
+/*   Updated: 2023/10/16 12:03:39 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include<stdio.h>
 
 /**
  * @brief Copies SIZE bytes of SRC into DEST, guaranteeing to NULL terminate
@@ -21,15 +22,12 @@
  * @param size the maximum amount of bytes that should be copied
  * @return size_t - the length of SRC
  */
-
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	srclen;
 
 	srclen = ft_strlen(src);
-	if (!size)
-		return (srclen);
-	if (srclen < size - 1)
+	if (srclen + 1 < size)
 		size = srclen + 1;
 	while (size > 8)
 	{
