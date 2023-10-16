@@ -44,9 +44,7 @@ static int	count_numbers(unsigned long nbr, int basesize)
 	return (i);
 }
 
-char	*ft_uitoa_base(
-	unsigned long nbr, char *base_to, unsigned long basesize)
-
+char	*ft_uitoa_base(unsigned long nbr, char *base_to, unsigned long basesize)
 {
 	int		i;
 	char	*res;

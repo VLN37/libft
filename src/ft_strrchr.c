@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 10:21:33 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/02 13:19:01 by jofelipe         ###   ########.fr       */
+/*   Updated: 2023/10/16 19:45:42 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strrchr(const char *str, int c)
 			addrs = (char *)str;
 		str++;
 	}
-	if (*str == (char)c)
+	if (c == 0)
 		addrs = (char *)str;
 	return (addrs);
 }
