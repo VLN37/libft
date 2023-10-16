@@ -6,19 +6,33 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 10:13:24 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/02 23:22:16 by jofelipe         ###   ########.fr       */
+/*   Updated: 2023/10/16 20:31:26 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 //Overwrites the first LEN bytes of PTR with the character C
-void	*ft_memset(void *str, int c, size_t len)
+void	*ft_memset(void *str, int c, size_t n)
 {
-	int	size;
+	char	vec[8];
+	int		qty;
+	int		i;
 
-	size = len;
-	while (len-- > 0)
-		*(unsigned char *)str++ = (unsigned char)c;
-	return (str - size);
+	qty = n;
+	i = 0;
+	if (n > 100)
+	{
+		while (i++ < 8)
+			vec[i] = c;
+		while (qty >= 8)
+		{
+			*(uint64_t *)str = *(uint64_t *)vec;
+			qty -= 8;
+			str += 8;
+		}
+	}
+	while (qty--)
+		*(char *)str++ = c;
+	return (str - n);
 }
