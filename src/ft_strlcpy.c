@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 11:26:42 by jofelipe          #+#    #+#             */
-/*   Updated: 2023/10/16 12:17:10 by jofelipe         ###   ########.fr       */
+/*   Updated: 2023/10/16 13:40:58 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,19 +28,10 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	srclen = ft_strlen(src);
 	if (srclen + 1 < size)
 		size = srclen + 1;
-	while (size > 8)
-	{
-		*(uint64_t *)dest = *(uint64_t const *)src;
-		dest += 8;
-		src += 8;
-		size -= 8;
-	}
-	while (size > 1)
-	{
-		*dest++ = *src++;
-		size--;
-	}
 	if (size)
-		*dest = '\0';
+	{
+		ft_memcpy(dest, src, size - 1);
+		dest[size - 1] = '\0';
+	}
 	return (srclen);
 }
