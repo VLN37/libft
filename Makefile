@@ -92,7 +92,6 @@ $(OBJDIR):
 
 
 so:			$(OBJDIR) $(OBJ)
-			$(CC) -nostartfiles -fPIC $(CFLAGS) $(SOURCE) -I $(INCDIR)
 			$(CC) -nostartfiles -shared -o libft.so $(OBJ)
 
 clean:

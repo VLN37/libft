@@ -6,12 +6,11 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 11:26:42 by jofelipe          #+#    #+#             */
-/*   Updated: 2023/10/16 12:03:39 by jofelipe         ###   ########.fr       */
+/*   Updated: 2023/10/16 12:17:10 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include<stdio.h>
 
 /**
  * @brief Copies SIZE bytes of SRC into DEST, guaranteeing to NULL terminate
