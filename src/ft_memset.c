@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 10:13:24 by jofelipe          #+#    #+#             */
-/*   Updated: 2023/10/16 20:31:26 by jofelipe         ###   ########.fr       */
+/*   Updated: 2023/10/16 21:35:21 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void	*ft_memset(void *str, int c, size_t n)
 	i = 0;
 	if (n > 100)
 	{
-		while (i++ < 8)
-			vec[i] = c;
+		while (i < 8)
+			vec[i++] = c;
 		while (qty >= 8)
 		{
 			*(uint64_t *)str = *(uint64_t *)vec;

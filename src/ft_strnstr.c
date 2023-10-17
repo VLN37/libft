@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 10:21:28 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/12/15 15:44:41 by jofelipe         ###   ########.fr       */
+/*   Updated: 2023/10/16 21:37:54 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 	j = 0;
 	if (!to_find[0])
 		return ((char *)str);
-	while (str[++i] && i < n)
+	while (++i < n && str[i])
 	{
 		while (str[i] == to_find[j] && i < n)
 		{
