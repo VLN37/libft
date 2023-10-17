@@ -12,27 +12,14 @@
 
 #include "libft.h"
 
-static int	istrimmed(char c, char const *set)
-{
-	while (*set)
-	{
-		if (c == *set)
-			return (true);
-		set++;
-	}
-	return (false);
-}
-
 static int	strsize(char *str, char *set)
 {
 	int	i;
 
 	i = 0;
 	while (*str)
-	{
-		if (!istrimmed(*str++, set))
+		if (!ft_is_in_set(*str++, set))
 			i++;
-	}
 	return (i);
 }
 
@@ -55,10 +42,9 @@ char	*ft_strerase(char *str, char *set)
 	res = (char *)malloc(sizeof(char) * size + 1);
 	while (*str)
 	{
-		if (!istrimmed(*str, set))
-			*res++ = *str++;
-		else
-			str++;
+		if (!ft_is_in_set(*str, set))
+			*res++ = *str;
+		str++;
 	}
 	*res = '\0';
 	return (res - size);
