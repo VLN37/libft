@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 10:21:28 by jofelipe          #+#    #+#             */
-/*   Updated: 2023/10/16 21:37:54 by jofelipe         ###   ########.fr       */
+/*   Updated: 2023/10/17 13:24:12 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,17 @@
 
 //returns the starting address of the first match of TO_FIND in STR, NULL if
 //none
-char	*ft_strnstr(const char *str, const char *to_find, size_t n)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 {
 	size_t	i;
-	size_t	j;
+	size_t	needle_len;
 
 	i = -1;
-	j = 0;
-	if (!to_find[0])
-		return ((char *)str);
-	while (++i < n && str[i])
-	{
-		while (str[i] == to_find[j] && i < n)
-		{
-			j++;
-			i++;
-			if (!to_find[j])
-				return ((char *)&str[i - j]);
-			if (str[i] != to_find[j])
-			{
-				i = i - j + 1;
-				j = 0;
-			}
-		}
-		if (!str[i])
-			break ;
-	}
+	needle_len = ft_strlen(needle);
+	if (!*needle)
+		return ((char *)haystack);
+	while (++i + needle_len <= n && haystack[i])
+		if (!ft_strncmp(haystack + i, needle, needle_len))
+			return ((char *)haystack + i);
 	return (NULL);
 }
