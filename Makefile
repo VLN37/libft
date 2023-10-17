@@ -61,6 +61,7 @@ SRC	=		get_next_line.c \
 			ft_null_ptr.c \
 			ft_strerase.c \
 			ft_tr.c \
+			ft_isspace.c \
 			ft_is_in_set.c \
 
 

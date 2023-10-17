@@ -14,7 +14,5 @@
 
 bool	ft_isspace(char c)
 {
-	return (c == ' ' || c == '\t'
-		|| c == '\n' || c == '\f'
-		|| c == '\r' || c == '\v');
+	return (ft_strchr(" \t\n\f\r\v", c));
 }
