@@ -6,13 +6,13 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 10:15:30 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/09/29 03:13:30 by jofelipe         ###   ########.fr       */
+/*   Updated: 2023/10/17 12:36:23 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	strcount(char const *s, char c, int *l)
+static int	strcount(char const *s, char c, size_t *l)
 {
 	int	i;
 
@@ -34,7 +34,7 @@ static int	strcount(char const *s, char c, int *l)
 	return (i);
 }
 
-static int	strsize(char *s, char c)
+static int	strsize(const char *s, char c)
 {
 	int	i;
 
@@ -58,14 +58,13 @@ static int	strsize(char *s, char c)
  */
 char	**ft_split(char const *s, char c)
 {
-	int		strctr;
-	int		i;
 	char	**res;
+	size_t	size;
+	size_t	i;
 
 	if (!s)
 		return (NULL);
-	strctr = strcount(s, c, &i) + 1;
-	res = (char **)malloc(sizeof(char *) * strctr);
+	res = (char **)malloc(sizeof(char *) * (strcount(s, c, &i) + 1));
 	if (!res)
 		return (NULL);
 	while (*s)
@@ -73,12 +72,12 @@ char	**ft_split(char const *s, char c)
 		while (*s == c)
 			s++;
 		if (*s)
-			res[i] = (char *)malloc(strsize((char *)s, c) + 1 * sizeof(char));
-		if (*s)
-			ft_strlcpy(res[i++], s, strsize((char *)s, c) + 1);
-		s += strsize((char *)s, c);
-		while (*s == c && *s)
-			s++;
+		{
+			size = strsize(s, c);
+			res[i] = malloc(sizeof(char) * (size + 1));
+			ft_strlcpy(res[i++], s, size + 1);
+			s += size;
+		}
 	}
 	res[i] = NULL;
 	return (res);
