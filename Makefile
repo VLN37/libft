@@ -101,6 +101,9 @@ clean:
 fclean:		clean
 			$(RM) $(NAME) libft.so
 
+test:		all
+			$(CC) main.c -lft -L. && ./a.out && rm a.out
+
 re:			fclean all
 
 .PHONY:		all clean fclean re
