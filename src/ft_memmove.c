@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 10:11:43 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/02 12:34:35 by jofelipe         ###   ########.fr       */
+/*   Updated: 2023/10/17 12:39:22 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,13 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	{
 		src = src + n - 1;
 		dest = dest + n - 1;
+		while (n > 8)
+		{
+			src -= 8;
+			dest -= 8;
+			n -= 8;
+			*(uint64_t *)dest = *(uint64_t const *)src;
+		}
 		while (n-- > 0)
 			*(char *)dest-- = *(char *)src--;
 	}
